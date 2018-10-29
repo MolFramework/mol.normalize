@@ -1,6 +1,6 @@
 {
   "name": "m.normalize",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "description": "Normalize file for MolFramework",
   "main": "index.html",
   "scripts": {

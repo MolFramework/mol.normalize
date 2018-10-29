@@ -1,5 +1,5 @@
 # m.normalize
-Mol Normalize es un archivo para normalizar los estilos que vienen definidos por defecto en cada navegador web. También permite resetear los estilos de un contenedor o de elementos independientes utilizando la funcionalidad de prefix.
+Mol Normalize es un archivo para normalizar los estilos que vienen definidos por defecto en cada navegador web. También permite resetear los estilos de un contenedor o de elementos independientes utilizando la funcionalidad de prefix, en el branch de prefix.
 
 
 Puedes agregar el módulo MolNormalize corriendo la siguiente línea en la consola
@@ -29,6 +29,8 @@ sass _normalize.scss:normalize.min.css --style compressed
 
 ##### Variables especiales
 
+Dentro del branch de 'prefix' se agrega un poco más de funcionalidad para proyectos más específicos. En general es para poder agregar estilos generales sin sobreescribir los que tenga la página, como por ejemplo para widgets.
+
 1. `$m-prefix: nombre` crea una clase con el nombre del prefijo y todo lo que se encuentre dentro del contenedor que utilice la clase tendrá los estilos especificados en la hoja del normalize.
 
 2. `$m-prefix-each: true` convierte todos los tag en clases y les agrega el nombre de prefijo al inicio de cada clase.
@@ -52,4 +54,4 @@ ___
 
 -----------
 
-( ﾟ▽ﾟ)/ Cualquier pregunta, comentario, sugerencia y/o corrección, escríbanme a [@MolFramework](https://twitter.com/MolFramework) en Twitter.
+( ﾟ▽ﾟ)/ Hi! [@MolFramework](https://twitter.com/MolFramework)

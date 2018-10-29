@@ -1,38 +1,40 @@
 /*
- * mNormalize v1.1.2
- * Custom Normalize File for M projects
+ * mNormalize v1.2.0
+ * Custom Normalize File for Mol projects
  * MIT License
  * https://github.com/flkt-crnpio/m.normalize
  */
-body, p, summary, button,
+button,
 input,
 textarea,
-select {
+select, summary, body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.5em;
   font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
 
-a, summary, button,
+button,
 input,
 textarea,
-select {
+select, summary, a {
   cursor: pointer;
   touch-action: manipulation;
   -ms-touch-action: manipulation;
   transition: all 0.2s linear;
+  text-rendering: optimizeLegibility;
 }
-a:active, summary:active, button:active,
+button:active,
 input:active,
 textarea:active,
-select:active, a:hover, summary:hover, button:hover,
+select:active, summary:active, a:active, button:hover,
 input:hover,
 textarea:hover,
-select:hover, a:focus, summary:focus, button:focus,
+select:hover, summary:hover, a:hover, button:focus,
 input:focus,
 textarea:focus,
-select:focus {
+select:focus, summary:focus, a:focus {
   outline-width: 0;
 }
 
@@ -47,7 +49,6 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -56,8 +57,7 @@ h3,
 h4,
 h5,
 h6 {
-  padding: 0;
-  line-height: 1;
+  line-height: 1em;
 }
 
 h1 {
@@ -114,11 +114,11 @@ summary:focus, summary:hover {
 
 blockquote,
 figure {
-  margin: 2.25;
+  margin: 1.5em;
 }
 
 figcaption {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 audio,
@@ -168,7 +168,7 @@ dfn {
 }
 
 small {
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 sub,
@@ -227,7 +227,7 @@ button,
 input,
 textarea,
 select {
-  padding: .4em .8em;
+  padding: 0.4em 0.8em;
 }
 
 input,
@@ -256,9 +256,9 @@ select {
 }
 
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type=button],
+input[type=reset],
+input[type=submit] {
   appearance: auto;
   -moz-appearance: button;
   -webkit-appearance: button;
@@ -267,12 +267,12 @@ input[type="submit"] {
   color: #fff;
 }
 button:focus, button:hover,
-input[type="button"]:focus,
-input[type="button"]:hover,
-input[type="reset"]:focus,
-input[type="reset"]:hover,
-input[type="submit"]:focus,
-input[type="submit"]:hover {
+input[type=button]:focus,
+input[type=button]:hover,
+input[type=reset]:focus,
+input[type=reset]:hover,
+input[type=submit]:focus,
+input[type=submit]:hover {
   background: black;
   border-color: black;
   color: #fff;
@@ -291,28 +291,28 @@ fieldset {
   padding: 0.35em 0.7em 0.7em;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
   padding: 0;
 }
 
-input[type="number"] {
+input[type=number] {
   width: auto;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-input[type="search"] {
+input[type=search] {
   appearance: auto;
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -328,7 +328,7 @@ template {
 }
 
 .bussy,
-[aria-busy="true"] {
+[aria-busy=true] {
   cursor: progress !important;
 }
 

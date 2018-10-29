@@ -1,6 +1,6 @@
 /*
- * mNormalize v1.1.2
- * Custom Normalize File for M projects
+ * mNormalize v1.2.0
+ * Custom Normalize File for Mol projects
  * MIT License
  * https://github.com/flkt-crnpio/m.normalize
  */
@@ -8,1038 +8,353 @@
 @import "_vars";
 
 %m-font-base {
-    font-family: $m-font-family;
-    font-size: $m-font-size;
-    line-height: $m-line-height;
-    font-weight: $m-font-weight;
+  font-family: $m-font-family;
+  font-size: $m-font-size;
+  line-height: $m-line-height;
+  font-weight: $m-font-weight;
+  text-rendering: optimizeLegibility;
 }
 
 %m-interact-base {
-    cursor: pointer;
-    touch-action: manipulation;
-    -ms-touch-action: manipulation;
-    transition: $m-transition;
-    &:active,
-    &:hover,
-    &:focus {
-        outline-width: 0;
-    }
+  cursor: pointer;
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  transition: $m-transition;
+  text-rendering: optimizeLegibility;
+  &:active,
+  &:hover,
+  &:focus {
+    outline-width: 0;
+  }
 }
 
-@if $m-prefix != null {
-    @if $m-prefix-each != true {
-        .#{$m-prefix} {
-            @extend %m-font-base;
-            background: $m-background;
-            color: $m-color;
-            margin: 0;
-            padding: 0;
-            text-rendering: optimizeLegibility;
-            box-sizing: border-box;
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                padding: 0;
-                line-height: 1;
-            }
-
-            h1 {
-                font-size: $m-h-size * 3;
-            }
-            h2 {
-                font-size: $m-h-size * 2.5;
-            }
-            h3 {
-                font-size: $m-h-size * 2;
-            }
-            h4 {
-                font-size: $m-h-size * 1.4;
-            }
-            h5 {
-                font-size: $m-h-size * 1.2;
-            }
-            h6 {
-                font-size: $m-h-size;
-            }
-
-            p {
-                @extend %m-font-base;
-            }
-
-            a {
-                @extend %m-interact-base;
-                background-color: transparent;
-                font-size: inherit;
-            }
-
-            article,
-            aside,
-            blockquote,
-            details,
-            figcaption,
-            figure,
-            footer,
-            header,
-            main,
-            menu,
-            nav,
-            section {
-                display: block;
-            }
-
-            summary {
-                @extend %m-font-base;
-                @extend %m-interact-base;
-                color: lighten($m-color, 50);
-                display: list-item;
-                &:focus,
-                &:hover {
-                    color: $m-color;
-                }
-            }
-
-            blockquote,
-            figure {
-                margin: $m-line-height * 1.5;
-            }
-
-            figcaption {
-                font-size: .8em;
-            }
-
-            audio,
-            canvas,
-            progress,
-            video {
-                display: inline-block;
-            }
-            audio:not([controls]) {
-                display: none;
-                height: 0;
-            }
-
-            audio,
-            canvas,
-            iframe,
-            video {
-                vertical-align: middle;
-            }
-
-            progress {
-                vertical-align: baseline;
-            }
-
-            abbr,
-            ins {
-                text-decoration: none;
-            }
-
-            abbr {
-                border-bottom: 1px dotted $m-color;
-                cursor: help;
-            }
-
-            ins {
-                border-bottom: 1px dashed $m-color;
-            }
-
-            b,
-            strong {
-                font-weight: bolder;
-            }
-
-            dfn {
-                font-style: italic;
-            }
-
-            small {
-                font-size: 0.8em;
-            }
-
-            sub,
-            sup {
-                font-size: 0.7em;
-                line-height: 0;
-                position: relative;
-                vertical-align: baseline;
-            }
-
-            sub {
-                bottom: -0.25em;
-            }
-
-            sup {
-                top: -0.5em;
-            }
-
-            code,
-            kbd,
-            pre,
-            samp,
-            var {
-                font-family: $m-code-family;
-                font-size: $m-font-size;
-            }
-
-            pre {
-                display: block;
-                margin: 1em 0;
-                overflow: auto;
-                white-space: pre;
-            }
-
-            hr {
-                border: none;
-                border-top: 1px solid $m-color;
-                box-sizing: content-box;
-                height: 0;
-                overflow: visible;
-            }
-
-            img {
-                border-style: none;
-            }
-
-            svg {
-                fill: currentColor;
-            }
-            svg:not(:root) {
-                overflow: hidden;
-            }
-
-            button,
-            input,
-            textarea,
-            select {
-                @extend %m-font-base;
-                @extend %m-interact-base;
-                padding: .4em .8em;
-            }
-
-            input,
-            textarea,
-            select {
-                background: transparent;
-                border: 1px solid lighten($m-color, 50);
-                border-radius: 1px;
-                &:focus,
-                &:hover {
-                    border-color: $m-color;
-                }
-            }
-
-            select {
-                appearance: none;
-                -moz-appearance: none;
-                -webkit-appearance: textfield;
-                background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(-45deg, transparent 50%, gray 50%);
-                background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
-                background-size: 5px 5px, 5px 5px;
-                background-repeat: no-repeat;
-            }
-
-            button,
-            input[type="button"],
-            input[type="reset"],
-            input[type="submit"] {
-                appearance: auto;
-                -moz-appearance: button;
-                -webkit-appearance: button;
-                background: $m-color;
-                border: 1px solid $m-color;
-                color: $m-background;
-                &:focus,
-                &:hover {
-                    background: darken($m-color, 50);
-                    border-color: darken($m-color, 100);
-                    color: $m-background;
-                }
-            }
-
-            button::-moz-focus-inner,
-            input::-moz-focus-inner,
-            textarea::-moz-focus-inner,
-            select::-moz-focus-inner {
-                border: 0;
-            }
-
-            fieldset {
-                border: 1px solid $m-color;
-                margin: 0;
-                padding: 0.35em 0.7em 0.7em;
-            }
-
-            input[type="checkbox"],
-            input[type="radio"] {
-                padding: 0;
-            }
-
-            input[type="number"] {
-                width: auto;
-            }
-
-            input[type="number"]::-webkit-inner-spin-button,
-            input[type="number"]::-webkit-outer-spin-button {
-                height: auto;
-            }
-
-            input[type="search"] {
-                appearance: auto;
-                -moz-appearance: textfield;
-                -webkit-appearance: textfield;
-            }
-
-            input[type="search"]::-webkit-search-cancel-button,
-            input[type="search"]::-webkit-search-decoration {
-                appearance: none;
-                -moz-appearance: none;
-                -webkit-appearance: none;
-            }
-
-            table {
-                border-collapse: collapse;
-                border-spacing: 0;
-            }
-
-            template {
-                display: none;
-            }
-
-            .bussy,
-            [aria-busy="true"] {
-                cursor: progress !important;
-            }
-
-            .controls,
-            [aria-controls] {
-                cursor: pointer !important;
-            }
-
-            .disabled,
-            [aria-disabled],
-            [disabled],
-            [disabled]:active,
-            [disabled]:focus,
-            [disabled]:hover {
-                cursor: default !important;
-                opacity: 0.5 !important;
-                pointer-events: none !important;
-            }
-
-            .hidden,
-            [hidden] {
-                display: none !important;
-                pointer-events: none !important;
-            }
-
-            .readonly,
-            [readonly] {
-                cursor: default !important;
-                pointer-events: none !important;
-            }
-
-            ::-webkit-selection {
-                background-color: $m-color;
-                color: $m-background;
-                text-shadow: none;
-            }
-            ::-moz-selection {
-                background-color: $m-color;
-                color: $m-background;
-                text-shadow: none;
-            }
-            ::selection {
-                background-color: $m-color;
-                color: $m-background;
-                text-shadow: none;
-            }
-        }
-    }
-
-    @else {
-        [class^=#{$m-prefix}],
-        [class*=#{$m-prefix}] {
-            background: $m-background;
-            color: $m-color;
-            font-family: $m-font-family;
-            line-height: $m-line-height;
-            text-rendering: optimizeLegibility;
-        }
-
-        .#{$m-prefix}-h1,
-        .#{$m-prefix}-h2,
-        .#{$m-prefix}-h3,
-        .#{$m-prefix}-h4,
-        .#{$m-prefix}-h5,
-        .#{$m-prefix}-h6 {
-            font-family: $m-font-family;
-            padding: 0;
-            line-height: 1;
-            text-rendering: optimizeLegibility;
-        }
-
-        .#{$m-prefix}-h1 {
-            font-size: $m-h-size * 3;
-        }
-        .#{$m-prefix}-h2 {
-            font-size: $m-h-size * 2.5;
-        }
-        .#{$m-prefix}-h3 {
-            font-size: $m-h-size * 2;
-        }
-        .#{$m-prefix}-h4 {
-            font-size: $m-h-size * 1.4;
-        }
-        .#{$m-prefix}-h5 {
-            font-size: $m-h-size * 1.2;
-        }
-        .#{$m-prefix}-h6 {
-            font-size: $m-h-size;
-        }
-
-        .#{$m-prefix}-p {
-            @extend %m-font-base;
-        }
-
-        .#{$m-prefix}-a {
-            @extend %m-interact-base;
-            background-color: transparent;
-            font-size: inherit;
-        }
-
-        .#{$m-prefix}-block,
-        .#{$m-prefix}-article,
-        .#{$m-prefix}-aside,
-        .#{$m-prefix}-blockquote,
-        .#{$m-prefix}-details,
-        .#{$m-prefix}-figcaption,
-        .#{$m-prefix}-figure,
-        .#{$m-prefix}-footer,
-        .#{$m-prefix}-header,
-        .#{$m-prefix}-main,
-        .#{$m-prefix}-menu,
-        .#{$m-prefix}-nav,
-        .#{$m-prefix}-section {
-            display: block;
-        }
-
-        .#{$m-prefix}-summary {
-            @extend %m-font-base;
-            @extend %m-interact-base;
-            color: lighten($m-color, 50);
-            display: list-item;
-            &:focus,
-            &:hover {
-                color: $m-color;
-            }
-        }
-
-        .#{$m-prefix}-blockquote,
-        .#{$m-prefix}-figure {
-            margin: $m-line-height * 1.5;
-        }
-
-        .#{$m-prefix}-figcaption {
-            font-size: .8em;
-        }
-
-        .#{$m-prefix}-inline,
-        .#{$m-prefix}-audio,
-        .#{$m-prefix}-canvas,
-        .#{$m-prefix}-progress,
-        .#{$m-prefix}-video {
-            display: inline-block;
-        }
-        .#{$m-prefix}-audio:not([controls]) {
-            display: none;
-            height: 0;
-        }
-
-        .#{$m-prefix}-middle,
-        .#{$m-prefix}-audio,
-        .#{$m-prefix}-canvas,
-        .#{$m-prefix}-iframe,
-        .#{$m-prefix}-video {
-            vertical-align: middle;
-        }
-
-        .#{$m-prefix}-baseline,
-        .#{$m-prefix}-progress {
-            vertical-align: baseline;
-        }
-
-        .#{$m-prefix}-abbr,
-        .#{$m-prefix}-ins {
-            text-decoration: none;
-        }
-
-        .#{$m-prefix}-abbr {
-            border-bottom: 1px dotted $m-color;
-            cursor: help;
-        }
-
-        .#{$m-prefix}-ins {
-            border-bottom: 1px dashed $m-color;
-        }
-
-        .#{$m-prefix}-b,
-        .#{$m-prefix}-strong {
-            font-weight: bolder;
-        }
-
-        .#{$m-prefix}-dfn {
-            font-style: italic;
-        }
-
-        .#{$m-prefix}-small {
-            font-size: 0.8em;
-        }
-
-        .#{$m-prefix}-sub,
-        .#{$m-prefix}-sup {
-            font-size: 0.7em;
-            line-height: 0;
-            position: relative;
-            vertical-align: baseline;
-        }
-
-        .#{$m-prefix}-sub {
-            bottom: -0.25em;
-        }
-
-        .#{$m-prefix}-sup {
-            top: -0.5em;
-        }
-
-        .#{$m-prefix}-code,
-        .#{$m-prefix}-kbd,
-        .#{$m-prefix}-pre,
-        .#{$m-prefix}-samp,
-        .#{$m-prefix}-var {
-            font-family: $m-code-family;
-            font-size: $m-font-size;
-        }
-
-        .#{$m-prefix}-pre {
-            display: block;
-            margin: 1em 0;
-            overflow: auto;
-            white-space: pre;
-        }
-
-        .#{$m-prefix}-hr {
-            border: none;
-            border-top: 1px solid $m-color;
-            box-sizing: content-box;
-            height: 0;
-            overflow: visible;
-        }
-
-        .#{$m-prefix}-img {
-            border-style: none;
-        }
-
-        .#{$m-prefix}-svg {
-            fill: currentColor;
-        }
-
-        .#{$m-prefix}-svg:not(:root) {
-            overflow: hidden;
-        }
-
-        .#{$m-prefix}-button,
-        .#{$m-prefix}-input,
-        .#{$m-prefix}-textarea,
-        .#{$m-prefix}-select {
-            @extend %m-font-base;
-            @extend %m-interact-base;
-            padding: .4em .8em;
-        }
-
-        .#{$m-prefix}-input,
-        .#{$m-prefix}-textarea,
-        .#{$m-prefix}-select {
-            background: transparent;
-            border: 1px solid lighten($m-color, 50);
-            border-radius: 1px;
-            &:focus,
-            &:hover {
-                border-color: $m-color;
-            }
-        }
-
-        .#{$m-prefix}-select {
-            appearance: none;
-            -moz-appearance: none;
-            -webkit-appearance: textfield;
-            background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(-45deg, transparent 50%, gray 50%);
-            background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
-            background-size: 5px 5px, 5px 5px;
-            background-repeat: no-repeat;
-        }
-
-        .#{$m-prefix}-button,
-        .#{$m-prefix}-input[type="button"],
-        .#{$m-prefix}-input[type="reset"],
-        .#{$m-prefix}-input[type="submit"] {
-            appearance: auto;
-            -moz-appearance: button;
-            -webkit-appearance: button;
-            background: $m-color;
-            border: 1px solid $m-color;
-            color: $m-background;
-            &:focus,
-            &:hover {
-                background: darken($m-color, 50);
-                border-color: darken($m-color, 100);
-                color: $m-background;
-            }
-        }
-
-        .#{$m-prefix}-button::-moz-focus-inner,
-        .#{$m-prefix}-input::-moz-focus-inner,
-        .#{$m-prefix}-textarea::-moz-focus-inner,
-        .#{$m-prefix}-select::-moz-focus-inner {
-            border: 0;
-        }
-
-        .#{$m-prefix}-fieldset {
-            border: 1px solid $m-color;
-            margin: 0;
-            padding: 0.35em 0.7em 0.7em;
-        }
-
-        .#{$m-prefix}-input[type="checkbox"],
-        .#{$m-prefix}-input[type="radio"] {
-            padding: 0;
-        }
-
-        .#{$m-prefix}-input[type="number"] {
-            width: auto;
-        }
-
-        .#{$m-prefix}-input[type="number"]::-webkit-inner-spin-button,
-        .#{$m-prefix}-input[type="number"]::-webkit-outer-spin-button {
-            height: auto;
-        }
-
-        .#{$m-prefix}-input[type="search"] {
-            appearance: auto;
-            -moz-appearance: textfield;
-            -webkit-appearance: textfield;
-        }
-
-        .#{$m-prefix}-input[type="search"]::-webkit-search-cancel-button,
-        .#{$m-prefix}-input[type="search"]::-webkit-search-decoration {
-            appearance: none;
-            -moz-appearance: none;
-            -webkit-appearance: none;
-        }
-
-        .#{$m-prefix}-table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-
-        .#{$m-prefix}-template {
-            display: none;
-        }
-
-        .#{$m-prefix}-bussy,
-        .#{$m-prefix}-[aria-busy="true"] {
-            cursor: progress !important;
-        }
-
-        .#{$m-prefix}-controls,
-        .#{$m-prefix}-[aria-controls] {
-            cursor: pointer !important;
-        }
-
-        .#{$m-prefix}-disabled,
-        .#{$m-prefix}-[aria-disabled],
-        .#{$m-prefix}-[disabled],
-        .#{$m-prefix}-[disabled]:active,
-        .#{$m-prefix}-[disabled]:focus,
-        .#{$m-prefix}-[disabled]:hover {
-            cursor: default !important;
-            opacity: 0.5 !important;
-            pointer-events: none !important;
-        }
-
-        .#{$m-prefix}-hidden,
-        .#{$m-prefix}-[hidden] {
-            display: none !important;
-            pointer-events: none !important;
-        }
-
-        .#{$m-prefix}-readonly,
-        .#{$m-prefix}-[readonly] {
-            cursor: default !important;
-            pointer-events: none !important;
-        }
-
-        [class^=#{$m-prefix}]::-webkit-selection,
-        [class*=#{$m-prefix}]::-webkit-selection {
-            background-color: $m-color;
-            color: $m-background;
-            text-shadow: none;
-        }
-        [class^=#{$m-prefix}]::-moz-selection,
-        [class*=#{$m-prefix}]::-moz-selection {
-            background-color: $m-color;
-            color: $m-background;
-            text-shadow: none;
-        }
-        [class^=#{$m-prefix}]::selection,
-        [class*=#{$m-prefix}]::selection {
-            background-color: $m-color;
-            color: $m-background;
-            text-shadow: none;
-        }
-    }
-
+html {
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
-@else {
-    html {
-        box-sizing: border-box;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-    }
 
-    body {
-        @extend %m-font-base;
-        background: $m-background;
-        color: $m-color;
-        margin: 0;
-        padding: 0;
-        text-rendering: optimizeLegibility;
-    }
+body {
+  @extend %m-font-base;
+  background: $m-background;
+  color: $m-color;
+  margin: 0;
+  padding: 0;
+}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        padding: 0;
-        line-height: 1;
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1em;
+}
 
-    h1 {
-        font-size: $m-h-size * 3;
-    }
-    h2 {
-        font-size: $m-h-size * 2.5;
-    }
-    h3 {
-        font-size: $m-h-size * 2;
-    }
-    h4 {
-        font-size: $m-h-size * 1.4;
-    }
-    h5 {
-        font-size: $m-h-size * 1.2;
-    }
-    h6 {
-        font-size: $m-h-size;
-    }
+h1 {
+  font-size: $m-h-size * 3;
+}
+h2 {
+  font-size: $m-h-size * 2.5;
+}
+h3 {
+  font-size: $m-h-size * 2;
+}
+h4 {
+  font-size: $m-h-size * 1.4;
+}
+h5 {
+  font-size: $m-h-size * 1.2;
+}
+h6 {
+  font-size: $m-h-size;
+}
 
-    p {
-        @extend %m-font-base;
-    }
+a {
+  @extend %m-interact-base;
+  background-color: transparent;
+  font-size: inherit;
+}
 
-    a {
-        @extend %m-interact-base;
-        background-color: transparent;
-        font-size: inherit;
-    }
+article,
+aside,
+blockquote,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
 
-    article,
-    aside,
-    blockquote,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    main,
-    menu,
-    nav,
-    section {
-        display: block;
-    }
+summary {
+  @extend %m-font-base;
+  @extend %m-interact-base;
+  color: lighten($m-color, 50);
+  display: list-item;
+  &:focus,
+  &:hover {
+      color: $m-color;
+  }
+}
 
-    summary {
-        @extend %m-font-base;
-        @extend %m-interact-base;
-        color: lighten($m-color, 50);
-        display: list-item;
-        &:focus,
-        &:hover {
-            color: $m-color;
-        }
-    }
+blockquote,
+figure {
+  margin: $m-line-height;
+}
 
-    blockquote,
-    figure {
-        margin: $m-line-height * 1.5;
-    }
+figcaption {
+  font-size: .8em;
+}
 
-    figcaption {
-        font-size: .8em;
-    }
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
 
-    audio,
-    canvas,
-    progress,
-    video {
-        display: inline-block;
-    }
-    audio:not([controls]) {
-        display: none;
-        height: 0;
-    }
+audio,
+canvas,
+iframe,
+video {
+  vertical-align: middle;
+}
 
-    audio,
-    canvas,
-    iframe,
-    video {
-        vertical-align: middle;
-    }
+progress {
+  vertical-align: baseline;
+}
 
-    progress {
-        vertical-align: baseline;
-    }
+abbr,
+ins {
+  text-decoration: none;
+}
 
-    abbr,
-    ins {
-        text-decoration: none;
-    }
+abbr {
+  border-bottom: 1px dotted $m-color;
+  cursor: help;
+}
 
-    abbr {
-        border-bottom: 1px dotted $m-color;
-        cursor: help;
-    }
+ins {
+  border-bottom: 1px dashed $m-color;
+}
 
-    ins {
-        border-bottom: 1px dashed $m-color;
-    }
+b,
+strong {
+  font-weight: bolder;
+}
 
-    b,
-    strong {
-        font-weight: bolder;
-    }
+dfn {
+  font-style: italic;
+}
 
-    dfn {
-        font-style: italic;
-    }
+small {
+  font-size: 0.7em;
+}
 
-    small {
-        font-size: 0.8em;
-    }
+sub,
+sup {
+  font-size: 0.7em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
 
-    sub,
-    sup {
-        font-size: 0.7em;
-        line-height: 0;
-        position: relative;
-        vertical-align: baseline;
-    }
+sub {
+  bottom: -0.25em;
+}
 
-    sub {
-        bottom: -0.25em;
-    }
+sup {
+  top: -0.5em;
+}
 
-    sup {
-        top: -0.5em;
-    }
+code,
+kbd,
+pre,
+samp,
+var {
+  font-family: $m-code-family;
+  font-size: $m-font-size;
+}
 
-    code,
-    kbd,
-    pre,
-    samp,
-    var {
-        font-family: $m-code-family;
-        font-size: $m-font-size;
-    }
+pre {
+  display: block;
+  margin: 1em 0;
+  overflow: auto;
+  white-space: pre;
+}
 
-    pre {
-        display: block;
-        margin: 1em 0;
-        overflow: auto;
-        white-space: pre;
-    }
+hr {
+  border: none;
+  border-top: 1px solid $m-color;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
 
-    hr {
-        border: none;
-        border-top: 1px solid $m-color;
-        box-sizing: content-box;
-        height: 0;
-        overflow: visible;
-    }
+img {
+  border-style: none;
+}
 
-    img {
-        border-style: none;
-    }
+svg {
+  fill: currentColor;
+}
 
-    svg {
-        fill: currentColor;
-    }
+svg:not(:root) {
+  overflow: hidden;
+}
 
-    svg:not(:root) {
-        overflow: hidden;
-    }
+button,
+input,
+textarea,
+select {
+  @extend %m-font-base;
+  @extend %m-interact-base;
+  padding: .4em .8em;
+}
 
-    button,
-    input,
-    textarea,
-    select {
-        @extend %m-font-base;
-        @extend %m-interact-base;
-        padding: .4em .8em;
-    }
+input,
+textarea,
+select {
+  background: transparent;
+  border: 1px solid lighten($m-color, 50);
+  border-radius: 1px;
+  &:focus,
+  &:hover {
+    border-color: $m-color;
+  }
+}
 
-    input,
-    textarea,
-    select {
-        background: transparent;
-        border: 1px solid lighten($m-color, 50);
-        border-radius: 1px;
-        &:focus,
-        &:hover {
-            border-color: $m-color;
-        }
-    }
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: textfield;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(-45deg, transparent 50%, gray 50%);
+  background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
 
-    select {
-        appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: textfield;
-        background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(-45deg, transparent 50%, gray 50%);
-        background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
-        background-size: 5px 5px, 5px 5px;
-        background-repeat: no-repeat;
-    }
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  appearance: auto;
+  -moz-appearance: button;
+  -webkit-appearance: button;
+  background: $m-color;
+  border: 1px solid $m-color;
+  color: $m-background;
+  &:focus,
+  &:hover {
+    background: darken($m-color, 50);
+    border-color: darken($m-color, 100);
+    color: $m-background;
+  }
+}
 
-    button,
-    input[type="button"],
-    input[type="reset"],
-    input[type="submit"] {
-        appearance: auto;
-        -moz-appearance: button;
-        -webkit-appearance: button;
-        background: $m-color;
-        border: 1px solid $m-color;
-        color: $m-background;
-        &:focus,
-        &:hover {
-            background: darken($m-color, 50);
-            border-color: darken($m-color, 100);
-            color: $m-background;
-        }
-    }
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+textarea::-moz-focus-inner,
+select::-moz-focus-inner {
+  border: 0;
+}
 
-    button::-moz-focus-inner,
-    input::-moz-focus-inner,
-    textarea::-moz-focus-inner,
-    select::-moz-focus-inner {
-        border: 0;
-    }
+fieldset {
+  border: 1px solid $m-color;
+  margin: 0;
+  padding: 0.35em 0.7em 0.7em;
+}
 
-    fieldset {
-        border: 1px solid $m-color;
-        margin: 0;
-        padding: 0.35em 0.7em 0.7em;
-    }
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+}
 
-    input[type="checkbox"],
-    input[type="radio"] {
-        padding: 0;
-    }
+input[type="number"] {
+  width: auto;
+}
 
-    input[type="number"] {
-        width: auto;
-    }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
 
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-        height: auto;
-    }
+input[type="search"] {
+  appearance: auto;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
 
-    input[type="search"] {
-        appearance: auto;
-        -moz-appearance: textfield;
-        -webkit-appearance: textfield;
-    }
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
 
-    input[type="search"]::-webkit-search-cancel-button,
-    input[type="search"]::-webkit-search-decoration {
-        appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-    }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
+template {
+  display: none;
+}
 
-    template {
-        display: none;
-    }
+.bussy,
+[aria-busy="true"] {
+  cursor: progress !important;
+}
 
-    .bussy,
-    [aria-busy="true"] {
-        cursor: progress !important;
-    }
+.controls,
+[aria-controls] {
+  cursor: pointer !important;
+}
 
-    .controls,
-    [aria-controls] {
-        cursor: pointer !important;
-    }
+.disabled,
+[aria-disabled],
+[disabled],
+[disabled]:active,
+[disabled]:focus,
+[disabled]:hover {
+  cursor: default !important;
+  opacity: 0.5 !important;
+  pointer-events: none !important;
+}
 
-    .disabled,
-    [aria-disabled],
-    [disabled],
-    [disabled]:active,
-    [disabled]:focus,
-    [disabled]:hover {
-        cursor: default !important;
-        opacity: 0.5 !important;
-        pointer-events: none !important;
-    }
+.hidden,
+[hidden] {
+  display: none !important;
+  pointer-events: none !important;
+}
 
-    .hidden,
-    [hidden] {
-        display: none !important;
-        pointer-events: none !important;
-    }
+.readonly,
+[readonly] {
+  cursor: default !important;
+  pointer-events: none !important;
+}
 
-    .readonly,
-    [readonly] {
-        cursor: default !important;
-        pointer-events: none !important;
-    }
-
-    ::-webkit-selection {
-        background-color: $m-color;
-        color: $m-background;
-        text-shadow: none;
-    }
-    ::-moz-selection {
-        background-color: $m-color;
-        color: $m-background;
-        text-shadow: none;
-    }
-    ::selection {
-        background-color: $m-color;
-        color: $m-background;
-        text-shadow: none;
-    }
+::-webkit-selection {
+  background-color: $m-color;
+  color: $m-background;
+  text-shadow: none;
+}
+::-moz-selection {
+  background-color: $m-color;
+  color: $m-background;
+  text-shadow: none;
+}
+::selection {
+  background-color: $m-color;
+  color: $m-background;
+  text-shadow: none;
 }

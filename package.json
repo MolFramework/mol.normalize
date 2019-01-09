@@ -1,28 +1,26 @@
 {
-  "name": "m.normalize",
-  "version": "1.2.0",
-  "description": "Normalize file for MolFramework",
+  "name": "normalize",
+  "version": "1.0.0",
+  "description": "Normalize file for Mol Framework",
   "main": "index.html",
-  "scripts": {
-    "watch": "sass --watch _normalize.scss:normalize.css --style expanded",
-    "build": "sass _normalize.scss:normalize.min.css --style compressed"
-  },
+  "scripts": {},
   "keywords": [
     "mol",
     "mol-framework",
     "css",
     "sass",
+    "scss",
     "scss-module",
     "normalize"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flkt-crnpio/m.normalize.git"
+    "url": "git+https://github.com/MolFramework/normalize.git"
   },
   "author": "flkt <flkt.crnpio@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/flkt-crnpio/m.normalize/issues"
+    "url": "https://github.com/MolFramework/normalize/issues"
   },
-  "homepage": "https://github.com/flkt-crnpio/m.normalize#readme"
+  "homepage": "https://github.com/MolFramework/normalize#readme"
 }

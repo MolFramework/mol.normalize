@@ -1,9 +1,13 @@
 {
   "name": "normalize",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Normalize file for Mol Framework",
-  "main": "index.html",
-  "scripts": {},
+  "scripts": {
+    "dist": "sass scss/normalize.scss:dist/normalize.min.css --style compressed",
+    "docs": "npm run scss | npm run server",
+    "server": "browser-sync start --server 'docs' --files 'docs'",
+    "scss": "sass --watch scss/normalize.scss:docs/normalize.css --style expanded"
+  },
   "keywords": [
     "mol",
     "mol-framework",
@@ -22,5 +26,7 @@
   "bugs": {
     "url": "https://github.com/MolFramework/normalize/issues"
   },
-  "homepage": "https://github.com/MolFramework/normalize#readme"
+  "devDependencies": {
+    "browser-sync": "^2.26.3"
+  }
 }

@@ -1,18 +1,40 @@
-# Normalize
+# Mol Normalize
 Para normalizar los estilos que vienen definidos por defecto en cada navegador web.
 
 ( ﾟ▽ﾟ)/ Hi! [@MolFramework](https://twitter.com/MolFramework)
 
-### Uso
 
-Instalación con [npm](https://www.npmjs.com/):
+## Uso e instalación
+Para utilizar el normalize en tu proyecto, puedes installarlo con [npm](https://www.npmjs.com/)
 ```sh
-npm install --save https://github.com/MolFramework/normalize.git
+npm install --save https://github.com/MolFramework/mol.normalize.git
 ```
+e importarlo en tu hoja de estilos principal
+```sh
+@import '~mol.normalize/dist/normalize.min.css';
+```
+o si prefieres utilizar tu propio archivo de variables, importa
+```sh
+@import '~mol.normalize/scss/_normalize.scss';
+```
+y crea un archivo que contenga las mismas variables que las que se encuentran en
+el archivo de `~mol.normalize/scss/_vars.scss`
 
-### Contenido
+
+## Dev
+Clona el repositorio
+```sh
+git clone https://github.com/MolFramework/mol.normalize.git
+```
+Edita los archivos dentro de la carpeta de **scss**
+
+#### Scripts
+- `npm run dist` Actualiza los archivos minificados de la carpeta de distribución **dist**
+- `npm run docs` Levanta un servidor local que se autorefresca con los cambios que se ejecuten en los archivos **scss** y actualiza los archivos de **docs**
+
+#### Archivos
 ```text
-normalize/
+mol.normalize/
 ├── dist/
 │   ├── normalize.min.css
 │   └── normalize.min.css.map
@@ -26,7 +48,7 @@ normalize/
     └── normalize.scss.
 ```
 
-### Problemas conocidos
+## Problemas conocidos
 
 `[type="search"]`
 

@@ -1,6 +1,8 @@
 # Mol Normalize
 Para normalizar los estilos que vienen definidos por defecto en cada navegador web.
 
+v1.0.0
+
 ( ﾟ▽ﾟ)/ Hi! [@MolFramework](https://twitter.com/MolFramework)
 
 
@@ -25,6 +27,8 @@ el archivo de `~mol.normalize/scss/_vars.scss`
 Clona el repositorio
 ```sh
 git clone https://github.com/MolFramework/mol.normalize.git
+cd mol.normalize/
+npm install
 ```
 Edita los archivos dentro de la carpeta de **scss**
 

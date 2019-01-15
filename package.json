@@ -1,6 +1,6 @@
 {
   "name": "mol.normalize",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Normalize file for Mol Framework",
   "scripts": {
     "dist": "sass scss/normalize.scss:dist/normalize.min.css --style compressed",

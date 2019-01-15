@@ -1,17 +1,19 @@
 /*
- * Normalize v0.0.0
+ * Normalize v1.0.0
  * Normalize File for Mol Framework
  * MIT License
  * https://github.com/MolFramework/normalize
  */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans:300,400,700");
 button,
 input,
 textarea,
 select, summary, body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  color: #222;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
   line-height: 1.5em;
-  font-weight: normal;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
 }
 
@@ -22,7 +24,7 @@ select, summary, a {
   cursor: pointer;
   touch-action: manipulation;
   -ms-touch-action: manipulation;
-  transition: all 0.2s linear;
+  transition: all 0.3s cubic-bezier(0.465, 0.24, 0.37, 0.825);
   text-rendering: optimizeLegibility;
 }
 button:active,
@@ -46,7 +48,6 @@ html {
 
 body {
   background: #fff;
-  color: #333;
   margin: 0;
   padding: 0;
 }
@@ -57,36 +58,47 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: normal;
   line-height: 1em;
+  text-rendering: optimizeLegibility;
+  text-transform: normal;
 }
 
 h1 {
-  font-size: 54px;
+  font-size: 60px;
 }
 
 h2 {
-  font-size: 45px;
+  font-size: 50px;
 }
 
 h3 {
-  font-size: 36px;
+  font-size: 40px;
 }
 
 h4 {
-  font-size: 25.2px;
+  font-size: 28px;
 }
 
 h5 {
-  font-size: 21.6px;
+  font-size: 24px;
 }
 
 h6 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 a {
   background-color: transparent;
+  color: rgba(0, 51, 255, 0.7);
   font-size: inherit;
+  font-weight: normal;
+}
+a.hover, a:active, a:hover, a:focus {
+  color: #03f;
 }
 
 article,
@@ -105,16 +117,22 @@ section {
 }
 
 summary {
-  color: #b3b3b3;
+  color: rgba(34, 34, 34, 0.5);
   display: list-item;
+  margin: 1.5em 0;
 }
 summary:focus, summary:hover {
-  color: #333;
+  color: #222;
 }
 
-blockquote,
+blockquote {
+  margin: 3em;
+  font-style: italic;
+}
+
+form,
 figure {
-  margin: 1.5em;
+  margin: 1.5em 0;
 }
 
 figcaption {
@@ -150,17 +168,17 @@ ins {
 }
 
 abbr {
-  border-bottom: 1px dotted #333;
+  border-bottom: 1px dotted #222;
   cursor: help;
 }
 
 ins {
-  border-bottom: 1px dashed #333;
+  border-bottom: 1px dashed #222;
 }
 
 b,
 strong {
-  font-weight: bolder;
+  font-weight: 900;
 }
 
 dfn {
@@ -193,22 +211,38 @@ pre,
 samp,
 var {
   font-family: monospace;
-  font-size: 16px;
+  font-size: 0.9em;
+  font-weight: normal;
+  padding: 0.4em 0.9em;
+  margin: 0.2em 0;
+}
+
+code {
+  background: rgba(34, 34, 34, 0.05);
+}
+
+kbd {
+  background: #10131d;
+  color: #d2d5df;
 }
 
 pre {
+  background: rgba(34, 34, 34, 0.05);
   display: block;
-  margin: 1em 0;
+  margin: 1.5em 0;
+  padding: 1em;
   overflow: auto;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 hr {
   border: none;
-  border-top: 1px solid #333;
+  border-top: 1px solid rgba(34, 34, 34, 0.2);
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+  margin: 3em 0;
 }
 
 img {
@@ -228,31 +262,36 @@ input,
 textarea,
 select {
   padding: 0.4em 0.8em;
+  margin: 0.2em 0;
 }
 
 input,
 textarea,
 select {
   background: transparent;
-  border: 1px solid #b3b3b3;
+  border: 1px solid rgba(34, 34, 34, 0.5);
   border-radius: 1px;
 }
-input:focus, input:hover,
+
+input.hover, input:focus, input:hover,
+textarea.hover,
 textarea:focus,
-textarea:hover,
-select:focus,
-select:hover {
-  border-color: #333;
+textarea:hover {
+  border: 1px solid #222;
 }
 
 select {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: textfield;
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(-45deg, transparent 50%, gray 50%);
+  background-image: linear-gradient(45deg, transparent 50%, rgba(34, 34, 34, 0.5) 50%), linear-gradient(-45deg, transparent 50%, rgba(34, 34, 34, 0.5) 50%);
   background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
+  opacity: 0.5;
+}
+select.selected, select.hover, select:focus, select:hover {
+  opacity: 1;
 }
 
 button,
@@ -262,19 +301,23 @@ input[type=submit] {
   appearance: auto;
   -moz-appearance: button;
   -webkit-appearance: button;
-  background: #333;
-  border: 1px solid #333;
+  background: rgba(0, 51, 255, 0.77);
+  border: 1px solid rgba(0, 51, 255, 0.7);
+  font-weight: normal;
   color: #fff;
 }
-button:focus, button:hover,
+button.hover, button:focus, button:hover,
+input[type=button].hover,
 input[type=button]:focus,
 input[type=button]:hover,
+input[type=reset].hover,
 input[type=reset]:focus,
 input[type=reset]:hover,
+input[type=submit].hover,
 input[type=submit]:focus,
 input[type=submit]:hover {
-  background: black;
-  border-color: black;
+  background: #03f;
+  border: 1px solid #03f;
   color: #fff;
 }
 
@@ -286,8 +329,8 @@ select::-moz-focus-inner {
 }
 
 fieldset {
-  border: 1px solid #333;
-  margin: 0;
+  border: 1px solid rgba(34, 34, 34, 0.2);
+  margin: 1.5em 0;
   padding: 0.35em 0.7em 0.7em;
 }
 
@@ -306,7 +349,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input[type=search] {
-  appearance: auto;
+  appearance: textfield;
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
 }
@@ -322,9 +365,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-template {
-  display: none;
+table th {
+  font-weight: normal;
+}
+table td {
+  font-weight: lighter;
 }
 
 .bussy,
@@ -344,7 +389,7 @@ template {
 [disabled]:focus,
 [disabled]:hover {
   cursor: default !important;
-  opacity: 0.5 !important;
+  opacity: 0.3 !important;
   pointer-events: none !important;
 }
 
@@ -356,24 +401,26 @@ template {
 
 .readonly,
 [readonly] {
+  border-color: rgba(34, 34, 34, 0.15);
+  color: #222 !important;
   cursor: default !important;
   pointer-events: none !important;
 }
 
 ::-webkit-selection {
-  background-color: #333;
+  background-color: #222;
   color: #fff;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background-color: #333;
+  background-color: #222;
   color: #fff;
   text-shadow: none;
 }
 
 ::selection {
-  background-color: #333;
+  background-color: #222;
   color: #fff;
   text-shadow: none;
 }

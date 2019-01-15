@@ -1,11 +1,27 @@
-$m-background:  #fff;
-$m-color:       #333;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans:300,400,700');
 
-$m-font-family: Arial, Helvetica, sans-serif;
-$m-font-size:   16px;
-$m-font-weight: normal;
-$m-line-height: 1.5em;
-$m-code-family: monospace;
-$m-h-size:      18px;
+$m-background:  		#fff;
+$m-color:       		#222;
+$m-primary:					#03f;
+// $m-background:  	#222029;
+// $m-color:       	#eee;
+// $m-primary:			#e73225;
 
-$m-transition:  all 0.2s linear;
+$m-font-family:     'Open Sans', sans-serif;
+$m-font-size:       15px;
+$m-font-weight:     400;
+// $m-font-weight:	300;
+$m-letter-spacing:  normal;
+$m-line-height:     1.5em;
+
+$m-code-family: 		monospace;
+
+$m-h-family: 				'Montserrat', sans-serif;
+$m-h-size:   				20px;
+$m-h-height: 				1em;
+$m-h-spacing:				normal;
+$m-h-weight: 				600;
+$m-h-style:  				normal;
+$m-h-transform:  		normal;
+
+$m-transition:			all 0.3s cubic-bezier(0.465, 0.240, 0.370, 0.825);

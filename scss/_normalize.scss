@@ -1,4 +1,5 @@
 %m-font-base {
+  color: $m-color;
   font-family: $m-font-family;
   font-size: $m-font-size;
   line-height: $m-line-height;
@@ -28,7 +29,6 @@ html {
 body {
   @extend %m-font-base;
   background: $m-background;
-  color: $m-color;
   margin: 0;
   padding: 0;
 }
@@ -39,7 +39,13 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1em;
+  font-family: $m-h-family;
+  font-style: $m-h-style;
+  font-weight: $m-h-weight;
+  letter-spacing: $m-h-spacing;
+  line-height: $m-h-height;
+  text-rendering: optimizeLegibility;
+  text-transform: $m-h-transform;
 }
 
 h1 {
@@ -64,7 +70,15 @@ h6 {
 a {
   @extend %m-interact-base;
   background-color: transparent;
+  color: rgba($m-primary, .7);
   font-size: inherit;
+  font-weight: normal;
+  &.hover,
+  &:active,
+  &:hover,
+  &:focus {
+    color: $m-primary;
+  }
 }
 
 article,
@@ -85,17 +99,23 @@ section {
 summary {
   @extend %m-font-base;
   @extend %m-interact-base;
-  color: lighten($m-color, 50);
+  color: rgba($m-color, .5);
   display: list-item;
+  margin: $m-line-height 0;
   &:focus,
   &:hover {
-      color: $m-color;
+    color: $m-color;
   }
 }
 
-blockquote,
+blockquote {
+  margin: $m-line-height*2;
+  font-style: italic;
+}
+
+form,
 figure {
-  margin: $m-line-height;
+  margin: $m-line-height 0;
 }
 
 figcaption {
@@ -140,7 +160,7 @@ ins {
 
 b,
 strong {
-  font-weight: bolder;
+  font-weight: 900;
 }
 
 dfn {
@@ -148,23 +168,23 @@ dfn {
 }
 
 small {
-  font-size: 0.7em;
+  font-size: .7em;
 }
 
 sub,
 sup {
-  font-size: 0.7em;
+  font-size: .7em;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 code,
@@ -173,22 +193,38 @@ pre,
 samp,
 var {
   font-family: $m-code-family;
-  font-size: $m-font-size;
+  font-size: .9em;
+  font-weight: normal;
+  padding: .4em .9em;
+  margin: .2em 0;
+}
+
+code {
+  background: rgba($m-color,.05);
+}
+
+kbd {
+  background: mix(#111, $m-primary, 95%);
+  color: mix(#ddd, $m-primary, 95%);
 }
 
 pre {
+  background: rgba($m-color,.05);
   display: block;
-  margin: 1em 0;
+  margin: $m-line-height 0;
+  padding: 1em;
   overflow: auto;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 hr {
   border: none;
-  border-top: 1px solid $m-color;
+  border-top: 1px solid rgba($m-color,.2);
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+  margin: $m-line-height*2 0;
 }
 
 img {
@@ -210,17 +246,23 @@ select {
   @extend %m-font-base;
   @extend %m-interact-base;
   padding: .4em .8em;
+  margin: .2em 0;
 }
 
 input,
 textarea,
 select {
   background: transparent;
-  border: 1px solid lighten($m-color, 50);
+  border: 1px solid rgba($m-color, .5);
   border-radius: 1px;
+}
+
+input,
+textarea {
+  &.hover,
   &:focus,
   &:hover {
-    border-color: $m-color;
+    border: 1px solid $m-color;
   }
 }
 
@@ -228,10 +270,18 @@ select {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: textfield;
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(-45deg, transparent 50%, gray 50%);
+  background-image: linear-gradient(45deg, transparent 50%, rgba($m-color, .5) 50%),
+    linear-gradient(-45deg, transparent 50%, rgba($m-color, .5) 50%);
   background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
+  opacity: .5;
+  &.selected,
+  &.hover,
+  &:focus,
+  &:hover {
+    opacity: 1;
+  }
 }
 
 button,
@@ -241,13 +291,15 @@ input[type="submit"] {
   appearance: auto;
   -moz-appearance: button;
   -webkit-appearance: button;
-  background: $m-color;
-  border: 1px solid $m-color;
+  background: rgba($m-primary,.77);
+  border: 1px solid rgba($m-primary,.7);
+  font-weight: normal;
   color: $m-background;
+  &.hover,
   &:focus,
   &:hover {
-    background: darken($m-color, 50);
-    border-color: darken($m-color, 100);
+    background: $m-primary;
+    border: 1px solid $m-primary;
     color: $m-background;
   }
 }
@@ -260,8 +312,8 @@ select::-moz-focus-inner {
 }
 
 fieldset {
-  border: 1px solid $m-color;
-  margin: 0;
+  border: 1px solid rgba($m-color,.2);
+  margin: $m-line-height 0;
   padding: 0.35em 0.7em 0.7em;
 }
 
@@ -280,7 +332,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="search"] {
-  appearance: auto;
+  appearance: textfield;
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
 }
@@ -295,10 +347,12 @@ input[type="search"]::-webkit-search-decoration {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-template {
-  display: none;
+  th {
+    font-weight: normal;
+  }
+  td {
+    font-weight: lighter;
+  }
 }
 
 .bussy,
@@ -318,7 +372,7 @@ template {
 [disabled]:focus,
 [disabled]:hover {
   cursor: default !important;
-  opacity: 0.5 !important;
+  opacity: 0.3 !important;
   pointer-events: none !important;
 }
 
@@ -330,6 +384,8 @@ template {
 
 .readonly,
 [readonly] {
+  border-color: rgba($m-color, .15);
+  color: $m-color !important;
   cursor: default !important;
   pointer-events: none !important;
 }

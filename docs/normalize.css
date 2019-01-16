@@ -290,6 +290,7 @@ select {
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
   opacity: 0.5;
+  padding-right: 30px;
 }
 select.selected, select.hover, select:focus, select:hover {
   opacity: 1;

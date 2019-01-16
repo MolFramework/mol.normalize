@@ -209,7 +209,8 @@ code,
 kbd,
 pre,
 samp,
-var {
+var,
+mark {
   font-family: monospace;
   font-size: 0.9em;
   font-weight: normal;

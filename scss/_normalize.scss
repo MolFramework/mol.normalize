@@ -243,7 +243,8 @@ svg:not(:root) {
 button,
 input,
 textarea,
-select {
+select,
+output {
   @extend %m-font-base;
   @extend %m-interact-base;
   padding: .4em .8em;
@@ -256,6 +257,11 @@ select {
   background: transparent;
   border: 1px solid rgba($m-color, .5);
   border-radius: 1px;
+}
+
+output {
+  background: transparent;
+  border-bottom: 1px solid rgba($m-color, .5);  
 }
 
 input,

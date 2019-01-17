@@ -8,7 +8,8 @@
 button,
 input,
 textarea,
-select, summary, body {
+select,
+output, summary, body {
   color: #222;
   font-family: "Open Sans", sans-serif;
   font-size: 15px;
@@ -20,7 +21,8 @@ select, summary, body {
 button,
 input,
 textarea,
-select, summary, a {
+select,
+output, summary, a {
   cursor: pointer;
   touch-action: manipulation;
   -ms-touch-action: manipulation;
@@ -30,13 +32,16 @@ select, summary, a {
 button:active,
 input:active,
 textarea:active,
-select:active, summary:active, a:active, button:hover,
+select:active,
+output:active, summary:active, a:active, button:hover,
 input:hover,
 textarea:hover,
-select:hover, summary:hover, a:hover, button:focus,
+select:hover,
+output:hover, summary:hover, a:hover, button:focus,
 input:focus,
 textarea:focus,
-select:focus, summary:focus, a:focus {
+select:focus,
+output:focus, summary:focus, a:focus {
   outline-width: 0;
 }
 
@@ -261,7 +266,8 @@ svg:not(:root) {
 button,
 input,
 textarea,
-select {
+select,
+output {
   padding: 0.4em 0.8em;
   margin: 0.2em 0;
 }
@@ -272,6 +278,11 @@ select {
   background: transparent;
   border: 1px solid rgba(34, 34, 34, 0.5);
   border-radius: 1px;
+}
+
+output {
+  background: transparent;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.5);
 }
 
 input.hover, input:focus, input:hover,

@@ -261,7 +261,7 @@ select {
 
 output {
   background: transparent;
-  border-bottom: 1px solid rgba($m-color, .5);  
+  border-bottom: 1px solid rgba($m-color, .5);
 }
 
 input,
@@ -276,8 +276,8 @@ textarea {
 [type="file"] {
   display: inline-flex;
   align-items: center;
-  padding-top: $m-font-size*.7;
-  padding-cottom: $m-font-size*.7;
+  padding-top: $m-font-size*.65;
+  padding-cottom: $m-font-size*.65;
 }
 
 select {
@@ -335,10 +335,6 @@ fieldset {
 input[type="checkbox"],
 input[type="radio"] {
   padding: 0;
-}
-
-input[type="number"] {
-  width: auto;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

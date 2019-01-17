@@ -295,8 +295,8 @@ textarea:hover {
 [type=file] {
   display: inline-flex;
   align-items: center;
-  padding-top: 10.5px;
-  padding-cottom: 10.5px;
+  padding-top: 9.75px;
+  padding-cottom: 9.75px;
 }
 
 select {
@@ -357,10 +357,6 @@ fieldset {
 input[type=checkbox],
 input[type=radio] {
   padding: 0;
-}
-
-input[type=number] {
-  width: auto;
 }
 
 input[type=number]::-webkit-inner-spin-button,

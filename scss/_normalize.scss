@@ -267,6 +267,13 @@ textarea {
   }
 }
 
+[type="file"] {
+  display: inline-flex;
+  align-items: center;
+  padding-top: $m-font-size*.7;
+  padding-cottom: $m-font-size*.7;
+}
+
 select {
   appearance: none;
   -moz-appearance: none;

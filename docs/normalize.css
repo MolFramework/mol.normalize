@@ -281,6 +281,13 @@ textarea:hover {
   border: 1px solid #222;
 }
 
+[type=file] {
+  display: inline-flex;
+  align-items: center;
+  padding-top: 10.5px;
+  padding-cottom: 10.5px;
+}
+
 select {
   appearance: none;
   -moz-appearance: none;

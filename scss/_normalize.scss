@@ -276,8 +276,8 @@ textarea {
 [type="file"] {
   display: inline-flex;
   align-items: center;
-  padding-top: $m-font-size*.65;
-  padding-cottom: $m-font-size*.65;
+  padding-top: calc(.4em + 4px);
+  padding-bottom: .4em;
 }
 
 select {

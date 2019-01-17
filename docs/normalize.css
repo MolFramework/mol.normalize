@@ -295,8 +295,8 @@ textarea:hover {
 [type=file] {
   display: inline-flex;
   align-items: center;
-  padding-top: 9.75px;
-  padding-cottom: 9.75px;
+  padding-top: calc(.4em + 4px);
+  padding-bottom: 0.4em;
 }
 
 select {

@@ -70,14 +70,14 @@ h6 {
 a {
   @extend %m-interact-base;
   background-color: transparent;
-  color: rgba($m-primary, .7);
+  color: $m-actn-color;
   font-size: inherit;
   font-weight: normal;
   &.hover,
   &:active,
   &:hover,
   &:focus {
-    color: $m-primary;
+    color: $m-actn-color-hover;
   }
 }
 
@@ -255,22 +255,18 @@ input,
 textarea,
 select {
   background: transparent;
-  border: 1px solid rgba($m-color, .5);
+  border: 1px solid rgba($m-color, .3);
   border-radius: 1px;
+  &.hover,
+  &:focus,
+  &:hover {
+    border: 1px solid rgba($m-color, .9);
+  }
 }
 
 output {
   background: transparent;
   border-bottom: 1px solid rgba($m-color, .5);
-}
-
-input,
-textarea {
-  &.hover,
-  &:focus,
-  &:hover {
-    border: 1px solid $m-color;
-  }
 }
 
 [type="file"] {
@@ -289,14 +285,7 @@ select {
   background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
-  opacity: .5;
   padding-right: 30px;
-  &.selected,
-  &.hover,
-  &:focus,
-  &:hover {
-    opacity: 1;
-  }
 }
 
 button,
@@ -306,16 +295,16 @@ input[type="submit"] {
   appearance: auto;
   -moz-appearance: button;
   -webkit-appearance: button;
-  background: rgba($m-primary,.77);
-  border: 1px solid rgba($m-primary,.7);
+  background: $m-actn-color;
+  border: 1px solid $m-actn-color;
   font-weight: normal;
-  color: $m-background;
+  color: $m-actn-font;
   &.hover,
   &:focus,
   &:hover {
-    background: $m-primary;
-    border: 1px solid $m-primary;
-    color: $m-background;
+    background: $m-actn-color-hover;
+    border: 1px solid $m-actn-color-hover;
+    color: $m-actn-font-hover;
   }
 }
 

@@ -49,7 +49,41 @@ mol.normalize/
 └── scss/
     ├── _normalize.scss
     ├── _vars.scss
-    └── normalize.scss.
+    └── normalize.scss
+```
+
+#### Variables específicas del grid
+```text
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans:300,400,700');
+
+$m-background:  			#fff;
+$m-color:       			#222029;
+$m-primary:						#ff2d39;
+$m-secondary:   			#2a21a5;
+$m-accent:      			#2ed7d1;
+
+$m-actn-color: 			  $m-primary;
+$m-actn-color-hover:  mix($m-primary, $m-accent, 90%);
+$m-actn-font:         $m-background;
+$m-actn-font-hover:   $m-background;
+
+$m-font-family:     	'Open Sans', sans-serif;
+$m-font-size:       	15px;
+$m-font-weight:     	400;
+$m-letter-spacing:  	normal;
+$m-line-height:     	1.5em;
+
+$m-code-family: 			monospace;
+
+$m-h-family: 					'Montserrat', sans-serif;
+$m-h-size:   					20px;
+$m-h-height: 					1em;
+$m-h-spacing:					normal;
+$m-h-weight: 					600;
+$m-h-style:  					normal;
+$m-h-transform:  			normal;
+
+$m-transition:				all 0.3s cubic-bezier(0.465, 0.240, 0.370, 0.825);
 ```
 
 ## Problemas conocidos

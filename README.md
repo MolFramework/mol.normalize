@@ -52,7 +52,7 @@ mol.normalize/
     └── normalize.scss
 ```
 
-#### Variables específicas del grid
+#### Variables específicas del normalize
 ```text
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans:300,400,700');
 

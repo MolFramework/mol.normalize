@@ -96,12 +96,16 @@ section {
   display: block;
 }
 
+details {
+  margin: $m-line-height 0 $m-line-height * 2;
+}
+
 summary {
   @extend %m-font-base;
   @extend %m-interact-base;
   color: rgba($m-color, .5);
   display: list-item;
-  margin: $m-line-height 0;
+  margin: $m-line-height 0 0;
   &:focus,
   &:hover {
     color: $m-color;
@@ -110,7 +114,9 @@ summary {
 
 blockquote {
   margin: $m-line-height*2;
+  font-family: $m-font-serif;
   font-style: italic;
+  font-size: 1.1em;
 }
 
 form,
@@ -163,7 +169,12 @@ strong {
   font-weight: 900;
 }
 
-dfn {
+dfn,
+i,
+em,
+cite,
+q {
+  font-family: $m-font-serif;
   font-style: italic;
 }
 

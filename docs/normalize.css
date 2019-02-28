@@ -4,7 +4,7 @@
  * MIT License
  * https://github.com/MolFramework/normalize
  */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|PT+Serif");
 button,
 input,
 textarea,
@@ -12,7 +12,7 @@ select,
 output, summary, body {
   color: #222029;
   font-family: "Open Sans", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5em;
   font-weight: 400;
   text-rendering: optimizeLegibility;
@@ -63,7 +63,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
   letter-spacing: normal;
@@ -73,37 +73,37 @@ h6 {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 69px;
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 57.5px;
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 46px;
 }
 
 h4 {
-  font-size: 28px;
+  font-size: 32.2px;
 }
 
 h5 {
-  font-size: 24px;
+  font-size: 27.6px;
 }
 
 h6 {
-  font-size: 20px;
+  font-size: 23px;
 }
 
 a {
   background-color: transparent;
-  color: #ff2d39;
+  color: #112;
   font-size: inherit;
   font-weight: normal;
 }
 a.hover, a:active, a:hover, a:focus {
-  color: #ea3e48;
+  color: #0e0e4e;
 }
 
 article,
@@ -121,10 +121,14 @@ section {
   display: block;
 }
 
+details {
+  margin: 1.5em 0 3em;
+}
+
 summary {
   color: rgba(34, 32, 41, 0.5);
   display: list-item;
-  margin: 1.5em 0;
+  margin: 1.5em 0 0;
 }
 summary:focus, summary:hover {
   color: #222029;
@@ -132,7 +136,9 @@ summary:focus, summary:hover {
 
 blockquote {
   margin: 3em;
+  font-family: "PT Serif", serif;
   font-style: italic;
+  font-size: 1.1em;
 }
 
 form,
@@ -186,7 +192,12 @@ strong {
   font-weight: 900;
 }
 
-dfn {
+dfn,
+i,
+em,
+cite,
+q {
+  font-family: "PT Serif", serif;
   font-style: italic;
 }
 
@@ -228,8 +239,8 @@ code {
 }
 
 kbd {
-  background: #1d1213;
-  color: #dfd4d5;
+  background: #111112;
+  color: #d3d3d4;
 }
 
 pre {
@@ -319,8 +330,8 @@ input[type=submit] {
   appearance: auto;
   -moz-appearance: button;
   -webkit-appearance: button;
-  background: #ff2d39;
-  border: 1px solid #ff2d39;
+  background: #112;
+  border: 1px solid #112;
   font-weight: normal;
   color: #fff;
 }
@@ -334,8 +345,8 @@ input[type=reset]:hover,
 input[type=submit].hover,
 input[type=submit]:focus,
 input[type=submit]:hover {
-  background: #ea3e48;
-  border: 1px solid #ea3e48;
+  background: #0e0e4e;
+  border: 1px solid #0e0e4e;
   color: #fff;
 }
 

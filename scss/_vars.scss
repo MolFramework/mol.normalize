@@ -1,26 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|PT+Serif');
 
 $m-background:  			#fff;
 $m-color:       			#222029;
-$m-primary:						#ff2d39;
-$m-secondary:   			#2a21a5;
-$m-accent:      			#2ed7d1;
+$m-primary:						#112;
+$m-secondary:   			#777;
+$m-accent:      			#00f;
 
 $m-actn-color: 			  $m-primary;
-$m-actn-color-hover:  mix($m-primary, $m-accent, 90%);
+$m-actn-color-hover:  mix($m-primary, $m-accent, 80%);
 $m-actn-font:         $m-background;
 $m-actn-font-hover:   $m-background;
 
-$m-font-family:     	'Open Sans', sans-serif;
-$m-font-size:       	15px;
+$m-font-serif: 				'PT Serif', serif;
+$m-font-family: 			'Open Sans', sans-serif;
+$m-font-size:       	16px;
 $m-font-weight:     	400;
 $m-letter-spacing:  	normal;
 $m-line-height:     	1.5em;
 
 $m-code-family: 			monospace;
 
-$m-h-family: 					'Montserrat', sans-serif;
-$m-h-size:   					20px;
+$m-h-family: 					'Josefin Sans', sans-serif;
+$m-h-size:   					23px;
 $m-h-height: 					1em;
 $m-h-spacing:					normal;
 $m-h-weight: 					600;

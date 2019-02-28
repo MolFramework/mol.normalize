@@ -54,40 +54,39 @@ mol.normalize/
 
 #### Variables específicas del normalize
 ```text
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|PT+Serif');
 
-$m-background:        #fff;
-$m-color:             #222029;
-$m-primary:           #ff2d39;
-$m-secondary:         #2a21a5;
-$m-accent:            #2ed7d1;
+$m-background:  			#fff;
+$m-color:       			#222029;
+$m-primary:						#112;
+$m-secondary:   			#777;
+$m-accent:      			#00f;
 
-$m-actn-color:        $m-primary;
-$m-actn-color-hover:  mix($m-primary, $m-accent, 90%);
+$m-actn-color: 			  $m-primary;
+$m-actn-color-hover:  mix($m-primary, $m-accent, 80%);
 $m-actn-font:         $m-background;
 $m-actn-font-hover:   $m-background;
 
-$m-font-family:       'Open Sans', sans-serif;
-$m-font-size:         15px;
-$m-font-weight:       400;
-$m-letter-spacing:    normal;
-$m-line-height:       1.5em;
+$m-font-serif: 				'PT Serif', serif;
+$m-font-family: 			'Open Sans', sans-serif;
+$m-font-size:       	16px;
+$m-font-weight:     	400;
+$m-letter-spacing:  	normal;
+$m-line-height:     	1.5em;
 
-$m-code-family:       monospace;
+$m-code-family: 			monospace;
 
-$m-h-family:          'Montserrat', sans-serif;
-$m-h-size:            20px;
-$m-h-height:          1em;
-$m-h-spacing:         normal;
-$m-h-weight:          600;
-$m-h-style:           normal;
-$m-h-transform:       normal;
+$m-h-family: 					'Josefin Sans', sans-serif;
+$m-h-size:   					23px;
+$m-h-height: 					1em;
+$m-h-spacing:					normal;
+$m-h-weight: 					600;
+$m-h-style:  					normal;
+$m-h-transform:  			normal;
 
-$m-transition:        all 0.3s cubic-bezier(0.465, 0.240, 0.370, 0.825);
+$m-transition:				all 0.3s cubic-bezier(0.465, 0.240, 0.370, 0.825);
 ```
 
 ## Problemas conocidos
 
-`[type="search"]`
-
-Σ(ﾟДﾟ；El input type search por el momento funciona como un input type text, para mantener el estilo general de los inputs, esperamos puedan agregar la funcionalidad con js.
+(//▽//) El input type search por el momento funciona como un input type text, para mantener el estilo general de los inputs, espero puedan agregar la funcionalidad con js.

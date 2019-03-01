@@ -208,6 +208,7 @@ mark {
   font-size: .9em;
   font-weight: normal;
   padding: .4em .9em;
+  display: inline-block;
   margin: .2em 0;
 }
 
@@ -222,9 +223,9 @@ kbd {
 
 pre {
   background: rgba($m-color,.05);
-  display: block;
   margin: $m-line-height 0;
   padding: 1em;
+  display: block;
   overflow: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -259,6 +260,7 @@ output {
   @extend %m-font-base;
   @extend %m-interact-base;
   padding: .4em .8em;
+  display: inline-block;
   margin: .2em 0;
 }
 
@@ -278,6 +280,8 @@ select {
 output {
   background: transparent;
   border-bottom: 1px solid rgba($m-color, .5);
+  display: inline-block;
+  vertical-align: bottom;
 }
 
 [type="file"] {
@@ -297,6 +301,7 @@ select {
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
   padding-right: 30px;
+  display: inline-block;
 }
 
 button,
@@ -330,11 +335,13 @@ fieldset {
   border: 1px solid rgba($m-color,.2);
   margin: $m-line-height 0;
   padding: 0.35em 0.7em 0.7em;
+  display: block;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
   padding: 0;
+  display: inline-block;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

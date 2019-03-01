@@ -71,14 +71,12 @@
       <p>
         <input type="text" placeholder="text">
         <input type="text" class="hover" placeholder="hover">
-      </p>
-      <p>
+        <br>
         <input type="text" class="disabled" placeholder="disabled">
         <input type="text" class="readonly" placeholder="readonly" value="readonly">
         <input type="text" class="bussy" placeholder="bussy">
         <input type="text" class="hidden" placeholder="hidden">
-      </p>
-      <p>
+        <br>
         <input type="search" placeholder="search">
         <input type="number" placeholder="number">
         <input type="file" name="" value="">
@@ -100,6 +98,15 @@
       </p>
       <p>
         <textarea name="name" rows="3" cols="33" placeholder="textarea"></textarea>
+      </p>
+      <p>
+        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)" class="form-inline">
+          <input type="number" id="a" value="10">
+          <span>+</span>
+          <input type="number" id="b" value="50">
+          <span>=</span>
+          <output name="x" for="a b"></output>
+        </form>
       </p>
       <p>
         <button type="button" name="button">button</button>

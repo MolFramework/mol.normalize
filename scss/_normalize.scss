@@ -397,7 +397,6 @@ table {
 .readonly,
 [readonly] {
   border-color: rgba($m-color, .15);
-  color: $m-color !important;
   cursor: default !important;
   pointer-events: none !important;
 }

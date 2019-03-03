@@ -9,18 +9,18 @@ v1.0.0
 ## Uso e instalación
 Para utilizar el normalize en tu proyecto, puedes installarlo con [npm](https://www.npmjs.com/)
 ```sh
-npm install --save https://github.com/MolFramework/mol.normalize.git
+npm install https://github.com/MolFramework/mol.normalize.git
 ```
-e importarlo en tu hoja de estilos principal
-```sh
-@import '~mol.normalize/dist/normalize.min.css';
-```
-o si prefieres utilizar tu propio archivo de variables, importa
+importa el archivo principal
 ```sh
 @import '~mol.normalize/scss/_normalize.scss';
 ```
 y crea un archivo que contenga las mismas variables que las que se encuentran en
 el archivo de `~mol.normalize/scss/_vars.scss`
+
+ó si no tienes tiempo, importa el archivo minificado en tu hoja de estilos principal
+```sh
+@import '~mol.normalize/dist/normalize.min.css';
 
 
 ## Dev

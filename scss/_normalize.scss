@@ -367,6 +367,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+tbody tr,
+tfoot tr {
+  border-top: 1px solid rgba($m-color,.2);
+}
+th, td {
+  padding: .4em .8em;
+}
 
 .bussy,
 [aria-busy="true"] {

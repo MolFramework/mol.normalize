@@ -11,7 +11,7 @@
   cursor: pointer;
   touch-action: manipulation;
   -ms-touch-action: manipulation;
-  transition: $m-transition;
+  transition: $m-actn-transition;
   text-rendering: optimizeLegibility;
   &:active,
   &:hover,
@@ -69,15 +69,20 @@ h6 {
 
 a {
   @extend %m-interact-base;
-  background-color: transparent;
-  color: $m-actn-color;
+  background-size: 100% 200%;
+  background-image: linear-gradient(0deg, $m-actn-color 50%, transparent 50%);
+  background-position: 0 -1px;
+  color: $m-actn-font;
   font-size: inherit;
   font-weight: normal;
+  text-decoration: none;
   &.hover,
   &:active,
   &:hover,
   &:focus {
-    color: $m-actn-color-hover;
+    color: $m-actn-font-hover;
+    background-position: 0 -100%;
+    text-decoration: none;
   }
 }
 
@@ -273,7 +278,7 @@ select {
   &.hover,
   &:focus,
   &:hover {
-    border: 1px solid rgba($m-color, .9);
+    border: 1px solid rgba($m-color, .7);
   }
 }
 
@@ -312,14 +317,16 @@ input[type="submit"] {
   appearance: auto;
   -moz-appearance: button;
   -webkit-appearance: button;
-  background: $m-actn-color;
+  background-size: 200% 100%;
+  background-image: linear-gradient(90deg, $m-actn-color 50%, transparent 50%);
+  background-position: 100% 0;
   border: 1px solid $m-actn-color;
   font-weight: normal;
   color: $m-actn-font;
   &.hover,
   &:focus,
   &:hover {
-    background: $m-actn-color-hover;
+    background-position: 0 0;
     border: 1px solid $m-actn-color-hover;
     color: $m-actn-font-hover;
   }

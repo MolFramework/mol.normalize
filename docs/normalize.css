@@ -26,7 +26,7 @@ output, summary, a {
   cursor: pointer;
   touch-action: manipulation;
   -ms-touch-action: manipulation;
-  transition: all 0.3s cubic-bezier(0.465, 0.24, 0.37, 0.825);
+  transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
   text-rendering: optimizeLegibility;
 }
 button:active,
@@ -97,13 +97,18 @@ h6 {
 }
 
 a {
-  background-color: transparent;
+  background-size: 100% 200%;
+  background-image: linear-gradient(0deg, #112 50%, transparent 50%);
+  background-position: 0 -1px;
   color: #112;
   font-size: inherit;
   font-weight: normal;
+  text-decoration: none;
 }
 a.hover, a:active, a:hover, a:focus {
-  color: #0e0e4e;
+  color: #fff;
+  background-position: 0 -100%;
+  text-decoration: none;
 }
 
 article,
@@ -299,7 +304,7 @@ textarea:hover,
 select.hover,
 select:focus,
 select:hover {
-  border: 1px solid rgba(34, 32, 41, 0.9);
+  border: 1px solid rgba(34, 32, 41, 0.7);
 }
 
 output {
@@ -336,10 +341,12 @@ input[type=submit] {
   appearance: auto;
   -moz-appearance: button;
   -webkit-appearance: button;
-  background: #112;
+  background-size: 200% 100%;
+  background-image: linear-gradient(90deg, #112 50%, transparent 50%);
+  background-position: 100% 0;
   border: 1px solid #112;
   font-weight: normal;
-  color: #fff;
+  color: #112;
 }
 button.hover, button:focus, button:hover,
 input[type=button].hover,
@@ -351,8 +358,8 @@ input[type=reset]:hover,
 input[type=submit].hover,
 input[type=submit]:focus,
 input[type=submit]:hover {
-  background: #0e0e4e;
-  border: 1px solid #0e0e4e;
+  background-position: 0 0;
+  border: 1px solid #41414e;
   color: #fff;
 }
 

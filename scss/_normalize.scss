@@ -11,8 +11,8 @@
   cursor: pointer;
   touch-action: manipulation;
   -ms-touch-action: manipulation;
-  transition: $m-actn-transition;
   text-rendering: optimizeLegibility;
+  transition: all .35s cubic-bezier(0.310, -0.105, 0.430, 1.890);
   &:active,
   &:hover,
   &:focus {
@@ -70,9 +70,9 @@ h6 {
 a {
   @extend %m-interact-base;
   background-size: 100% 200%;
-  background-image: linear-gradient(0deg, $m-actn-color 50%, transparent 50%);
+  background-image: linear-gradient(0deg, $m-primary 50%, transparent 50%);
   background-position: 0 -1px;
-  color: $m-actn-font;
+  color: $m-primary;
   font-size: inherit;
   font-weight: normal;
   text-decoration: none;
@@ -80,7 +80,7 @@ a {
   &:active,
   &:hover,
   &:focus {
-    color: $m-actn-font-hover;
+    color: $m-background;
     background-position: 0 -100%;
     text-decoration: none;
   }
@@ -317,18 +317,23 @@ input[type="submit"] {
   appearance: auto;
   -moz-appearance: button;
   -webkit-appearance: button;
-  background-size: 200% 100%;
-  background-image: linear-gradient(90deg, $m-actn-color 50%, transparent 50%);
-  background-position: 100% 0;
-  border: 1px solid $m-actn-color;
-  font-weight: normal;
-  color: $m-actn-font;
+  background: $m-primary;
+  box-shadow: inset 0 0 0 0 $m-primary, inset 0 0 0 0 $m-primary, 0 0 0 0 $m-primary, 0 0 0 0 $m-primary;
+  border: none;
+  border-radius: 0;
+  color: $m-background;
   &.hover,
   &:focus,
   &:hover {
-    background-position: 0 0;
-    border: 1px solid $m-actn-color-hover;
-    color: $m-actn-font-hover;
+    background: $m-background;
+    box-shadow: inset -1px -1px 0 0 $m-primary, inset -2px -2px 0 0 $m-primary, 1px 1px 0 0 $m-primary, 2px 2px 0 0 $m-primary;
+    border: none;
+    border-radius: 0;
+    color: $m-primary;
+    padding-left: .4em;
+    padding-right: .4em;
+    margin-left: .4em;
+    margin-right: .4em;
   }
 }
 

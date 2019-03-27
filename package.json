@@ -1,7 +1,7 @@
 {
   "name": "mol.normalize",
   "version": "1.0.0",
-  "description": "Normalize file for Mol Framework",
+  "description": "editable normalize file. for modules in mol-project",
   "scripts": {
     "dist": "sass scss/normalize.scss:dist/normalize.min.css --style compressed",
     "docs": "npm run scss | npm run start",
@@ -10,7 +10,7 @@
   },
   "keywords": [
     "mol",
-    "mol-framework",
+    "mol-project",
     "css",
     "sass",
     "scss",
@@ -19,12 +19,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MolFramework/mol.normalize.git"
+    "url": "git+https://github.com/mol-project/mol.normalize.git"
   },
   "author": "flkt <flkt.crnpio@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MolFramework/mol.normalize/issues"
+    "url": "https://github.com/mol-project/mol.normalize/issues"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3"

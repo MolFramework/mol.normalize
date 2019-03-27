@@ -54,26 +54,26 @@ mol.normalize/
 ```text
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|PT+Serif');
 
-$m-background:  			#fff;
-$m-color:       			#222029;
-$m-primary:						#32bdc6;
+$m-background:      #fff;
+$m-color:           #222029;
+$m-primary:         #32bdc6;
 
-$m-font-serif: 				'PT Serif', serif;
-$m-font-family: 			'Open Sans', sans-serif;
-$m-font-size:       	16px;
-$m-font-weight:     	400;
-$m-letter-spacing:  	normal;
-$m-line-height:     	1.5em;
+$m-font-serif:      'PT Serif', serif;
+$m-font-family:     'Open Sans', sans-serif;
+$m-font-size:       16px;
+$m-font-weight:     400;
+$m-letter-spacing:  normal;
+$m-line-height:     1.5em;
 
-$m-code-family: 			monospace;
+$m-code-family:     monospace;
 
-$m-h-family: 					'Josefin Sans', sans-serif;
-$m-h-size:   					23px;
-$m-h-height: 					1em;
-$m-h-spacing:					normal;
-$m-h-weight: 					600;
-$m-h-style:  					normal;
-$m-h-transform:  			normal;
+$m-h-family:        'Josefin Sans', sans-serif;
+$m-h-size:          23px;
+$m-h-height:        1em;
+$m-h-spacing:       normal;
+$m-h-weight:        600;
+$m-h-style:         normal;
+$m-h-transform:     normal;
 ```
 
 ## Problemas conocidos

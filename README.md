@@ -1,7 +1,7 @@
 # Mol Normalize
 Para normalizar los estilos que vienen definidos por defecto en cada navegador web y darle un poco de estilo.
 
-v1.0.0
+v2.0.1
 
 
 ## Uso e instalación

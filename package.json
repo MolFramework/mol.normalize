@@ -1,6 +1,6 @@
 {
   "name": "mol.normalize",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "editable normalize file. for modules in mol-project",
   "scripts": {
     "dist": "sass scss/normalize.scss:dist/normalize.min.css --style compressed",

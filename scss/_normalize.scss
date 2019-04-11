@@ -12,12 +12,19 @@
   touch-action: manipulation;
   -ms-touch-action: manipulation;
   text-rendering: optimizeLegibility;
-  transition: all .35s cubic-bezier(0.310, -0.105, 0.430, 1.890);
+  transition: all .27s ease-in-out;
   &:active,
   &:hover,
   &:focus {
     outline-width: 0;
   }
+}
+%m-input-base {
+  @extend %m-font-base;
+  @extend %m-interact-base;
+  padding: .4em .8em;
+  display: inline-block;
+  margin: .2em 0;
 }
 
 html {
@@ -69,10 +76,8 @@ h6 {
 
 a {
   @extend %m-interact-base;
-  background-size: 100% 200%;
-  background-image: linear-gradient(0deg, $m-primary 50%, transparent 50%);
-  background-position: 0 -1px;
-  color: $m-primary;
+  color: mix($m-primary, $m-color, 90%);
+  display: inline;
   font-size: inherit;
   font-weight: normal;
   text-decoration: none;
@@ -80,9 +85,8 @@ a {
   &:active,
   &:hover,
   &:focus {
-    color: $m-background;
-    background-position: 0 -100%;
-    text-decoration: none;
+    color: mix($m-primary, $m-color, 100%);
+    text-decoration: underline;
   }
 }
 
@@ -119,7 +123,7 @@ summary {
 
 blockquote {
   margin: $m-line-height * 2;
-  font-family: $m-font-serif;
+  font-family: $m-em-family;
   font-style: italic;
   font-size: 1.1em;
 }
@@ -179,7 +183,7 @@ i,
 em,
 cite,
 q {
-  font-family: $m-font-serif;
+  font-family: $m-em-family;
   font-style: italic;
 }
 
@@ -257,18 +261,6 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-button,
-input,
-textarea,
-select,
-output {
-  @extend %m-font-base;
-  @extend %m-interact-base;
-  padding: .4em .8em;
-  display: inline-block;
-  margin: .2em 0;
-}
-
 [type="date"],
 [type="datetime"],
 [type="datetime-local"],
@@ -285,7 +277,11 @@ output {
 [type="week"],
 textarea,
 select {
+  @extend %m-input-base;
+  background: $m-background;
   border: 1px solid rgba($m-color, .3);
+  border-radius: 2px;
+  color: $m-color;
   &.hover,
   &:focus,
   &:hover {
@@ -294,17 +290,10 @@ select {
 }
 
 output {
+  @extend %m-input-base;
   border-bottom: 1px solid rgba($m-color, .5);
   cursor: text;
-  display: inline-block;
   vertical-align: bottom;
-}
-
-[type="file"] {
-  display: inline-flex;
-  align-items: center;
-  padding-top: calc(.4em + 4px);
-  padding-bottom: .4em;
 }
 
 select {
@@ -317,23 +306,29 @@ select {
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
   padding-right: 30px;
-  display: inline-block;
+}
+
+[type="file"] {
+  display: inline-flex;
+  align-items: center;
+  padding-top: calc(.4em + 4px);
+  padding-bottom: .4em;
 }
 
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background-size: 100% 200%;
-  background-image: linear-gradient(0deg, $m-primary 50%, $m-background 50%);
-  background-position: 0 100%;
-  border: 1px solid $m-primary;
-  color: $m-background;
+  @extend %m-input-base;
+  background: mix($m-primary, $m-background, 0%);
+  border-color: $m-primary;
+  border-radius: 2px;
+  color: mix($m-primary, $m-background, 100%);
   &.hover,
   &:focus,
   &:hover {
-    background-position: 0 0;
-    color: $m-primary;
+    background: mix($m-primary, $m-background, 100%);
+    color: mix($m-primary, $m-background, 0%);
   }
 }
 
@@ -342,6 +337,7 @@ input::-moz-focus-inner,
 textarea::-moz-focus-inner,
 select::-moz-focus-inner {
   border: 0;
+  outline-width: 0;
 }
 
 fieldset {

@@ -19,12 +19,13 @@
     outline-width: 0;
   }
 }
+
 %m-input-base {
   @extend %m-font-base;
-  @extend %m-interact-base;
-  padding: .4em .8em;
   display: inline-block;
   margin: .2em 0;
+  padding: .4em .8em;
+  transition: all .27s ease-in-out;
 }
 
 html {
@@ -226,8 +227,8 @@ code {
 }
 
 kbd {
-  background: mix(#111, $m-primary, 95%);
-  color: mix(#ddd, $m-primary, 95%);
+  background: mix($m-color, $m-primary, 90%);
+  color: mix($m-background, $m-primary, 90%);
 }
 
 pre {
@@ -292,7 +293,6 @@ select {
 output {
   @extend %m-input-base;
   border-bottom: 1px solid rgba($m-color, .5);
-  cursor: text;
   vertical-align: bottom;
 }
 
@@ -320,15 +320,16 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   @extend %m-input-base;
-  background: mix($m-primary, $m-background, 0%);
+  @extend %m-interact-base;
+  background: $m-background;
   border-color: $m-primary;
   border-radius: 2px;
-  color: mix($m-primary, $m-background, 100%);
+  color: $m-primary;
   &.hover,
   &:focus,
   &:hover {
-    background: mix($m-primary, $m-background, 100%);
-    color: mix($m-primary, $m-background, 0%);
+    background: $m-primary;
+    color: $m-background;
   }
 }
 

@@ -206,6 +206,12 @@ video {
   vertical-align: middle;
 }
 
+iframe {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 progress {
   vertical-align: baseline;
 }

@@ -116,8 +116,9 @@ summary {
   color: rgba($m-color, .5);
   display: list-item;
   margin: $m-line-height 0 0;
-  &:focus,
-  &:hover {
+  &:active,
+  &:hover,
+  &:focus {
     color: $m-color;
   }
 }
@@ -154,6 +155,11 @@ canvas,
 iframe,
 video {
   vertical-align: middle;
+}
+
+audio,
+video {
+	@extend %m-interact-base;
 }
 
 iframe {
@@ -290,8 +296,9 @@ select {
   border-radius: 2px;
   color: $m-color;
   &.hover,
-  &:focus,
-  &:hover {
+  &:active,
+  &:hover,
+  &:focus {
     border-color: rgba($m-color, .7);
   }
 }
@@ -332,8 +339,9 @@ input[type="submit"] {
   border-radius: 2px;
   color: $m-primary;
   &.hover,
-  &:focus,
-  &:hover {
+  &:active,
+  &:hover,
+  &:focus {
     background: $m-primary;
     color: $m-background;
   }

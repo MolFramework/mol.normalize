@@ -35,7 +35,8 @@ select {
 button,
 input[type=button],
 input[type=reset],
-input[type=submit], summary, a {
+input[type=submit], audio,
+video, summary, a {
   cursor: pointer;
   touch-action: manipulation;
   -ms-touch-action: manipulation;
@@ -45,13 +46,16 @@ input[type=submit], summary, a {
 button:active,
 input[type=button]:active,
 input[type=reset]:active,
-input[type=submit]:active, summary:active, a:active, button:hover,
+input[type=submit]:active, audio:active,
+video:active, summary:active, a:active, button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
-input[type=submit]:hover, summary:hover, a:hover, button:focus,
+input[type=submit]:hover, audio:hover,
+video:hover, summary:hover, a:hover, button:focus,
 input[type=button]:focus,
 input[type=reset]:focus,
-input[type=submit]:focus, summary:focus, a:focus {
+input[type=submit]:focus, audio:focus,
+video:focus, summary:focus, a:focus {
   outline-width: 0;
 }
 
@@ -167,7 +171,7 @@ summary {
   display: list-item;
   margin: 1.5em 0 0;
 }
-summary:focus, summary:hover {
+summary:active, summary:hover, summary:focus {
   color: #fff;
 }
 
@@ -339,52 +343,67 @@ select {
   border-radius: 2px;
   color: #fff;
 }
-[type=date].hover, [type=date]:focus, [type=date]:hover,
+[type=date].hover, [type=date]:active, [type=date]:hover, [type=date]:focus,
 [type=datetime].hover,
-[type=datetime]:focus,
+[type=datetime]:active,
 [type=datetime]:hover,
+[type=datetime]:focus,
 [type=datetime-local].hover,
-[type=datetime-local]:focus,
+[type=datetime-local]:active,
 [type=datetime-local]:hover,
+[type=datetime-local]:focus,
 [type=email].hover,
-[type=email]:focus,
+[type=email]:active,
 [type=email]:hover,
+[type=email]:focus,
 [type=file].hover,
-[type=file]:focus,
+[type=file]:active,
 [type=file]:hover,
+[type=file]:focus,
 [type=month].hover,
-[type=month]:focus,
+[type=month]:active,
 [type=month]:hover,
+[type=month]:focus,
 [type=number].hover,
-[type=number]:focus,
+[type=number]:active,
 [type=number]:hover,
+[type=number]:focus,
 [type=password].hover,
-[type=password]:focus,
+[type=password]:active,
 [type=password]:hover,
+[type=password]:focus,
 [type=search].hover,
-[type=search]:focus,
+[type=search]:active,
 [type=search]:hover,
+[type=search]:focus,
 [type=tel].hover,
-[type=tel]:focus,
+[type=tel]:active,
 [type=tel]:hover,
+[type=tel]:focus,
 [type=text].hover,
-[type=text]:focus,
+[type=text]:active,
 [type=text]:hover,
+[type=text]:focus,
 [type=time].hover,
-[type=time]:focus,
+[type=time]:active,
 [type=time]:hover,
+[type=time]:focus,
 [type=url].hover,
-[type=url]:focus,
+[type=url]:active,
 [type=url]:hover,
+[type=url]:focus,
 [type=week].hover,
-[type=week]:focus,
+[type=week]:active,
 [type=week]:hover,
+[type=week]:focus,
 textarea.hover,
-textarea:focus,
+textarea:active,
 textarea:hover,
+textarea:focus,
 select.hover,
-select:focus,
-select:hover {
+select:active,
+select:hover,
+select:focus {
   border-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -420,16 +439,19 @@ input[type=submit] {
   border-radius: 2px;
   color: #ff5252;
 }
-button.hover, button:focus, button:hover,
+button.hover, button:active, button:hover, button:focus,
 input[type=button].hover,
-input[type=button]:focus,
+input[type=button]:active,
 input[type=button]:hover,
+input[type=button]:focus,
 input[type=reset].hover,
-input[type=reset]:focus,
+input[type=reset]:active,
 input[type=reset]:hover,
+input[type=reset]:focus,
 input[type=submit].hover,
-input[type=submit]:focus,
-input[type=submit]:hover {
+input[type=submit]:active,
+input[type=submit]:hover,
+input[type=submit]:focus {
   background: #ff5252;
   color: #0a0838;
 }

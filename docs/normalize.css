@@ -81,6 +81,7 @@ select {
   display: inline-block;
   margin: 0.2em 0;
   padding: 0.4em 0.8em;
+  max-width: calc(100% - 1.6em);
   transition: all 0.27s ease-in-out;
 }
 
@@ -468,6 +469,7 @@ fieldset {
   border: 1px solid rgba(255, 255, 255, 0.2);
   margin: 1.5em 0;
   padding: 0.35em 0.7em 0.7em;
+  max-width: calc(100% - 1.4em);
   display: block;
 }
 

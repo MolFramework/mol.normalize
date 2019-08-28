@@ -25,6 +25,7 @@
   display: inline-block;
   margin: .2em 0;
   padding: .4em .8em;
+  max-width: calc(100% - 1.6em);
   transition: all .27s ease-in-out;
 }
 
@@ -359,6 +360,7 @@ fieldset {
   border: 1px solid rgba($m-color,.2);
   margin: $m-line-height 0;
   padding: 0.35em 0.7em 0.7em;
+  max-width: calc(100% - 1.4em);
   display: block;
 }
 

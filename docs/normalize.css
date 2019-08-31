@@ -5,7 +5,7 @@
  * https://github.com/mol-project
  */
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|PT+Serif");
-summary, body, button,
+body, button,
 input[type=button],
 input[type=reset],
 input[type=submit], output, [type=date],
@@ -84,11 +84,70 @@ select {
   max-width: calc(100% - 1.6em);
   transition: all 0.27s ease-in-out;
 }
+button:active,
+input[type=button]:active,
+input[type=reset]:active,
+input[type=submit]:active, output:active, [type=date]:active,
+[type=datetime]:active,
+[type=datetime-local]:active,
+[type=email]:active,
+[type=file]:active,
+[type=month]:active,
+[type=number]:active,
+[type=password]:active,
+[type=search]:active,
+[type=tel]:active,
+[type=text]:active,
+[type=time]:active,
+[type=url]:active,
+[type=week]:active,
+textarea:active,
+select:active, button:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+input[type=submit]:hover, output:hover, [type=date]:hover,
+[type=datetime]:hover,
+[type=datetime-local]:hover,
+[type=email]:hover,
+[type=file]:hover,
+[type=month]:hover,
+[type=number]:hover,
+[type=password]:hover,
+[type=search]:hover,
+[type=tel]:hover,
+[type=text]:hover,
+[type=time]:hover,
+[type=url]:hover,
+[type=week]:hover,
+textarea:hover,
+select:hover, button:focus,
+input[type=button]:focus,
+input[type=reset]:focus,
+input[type=submit]:focus, output:focus, [type=date]:focus,
+[type=datetime]:focus,
+[type=datetime-local]:focus,
+[type=email]:focus,
+[type=file]:focus,
+[type=month]:focus,
+[type=number]:focus,
+[type=password]:focus,
+[type=search]:focus,
+[type=tel]:focus,
+[type=text]:focus,
+[type=time]:focus,
+[type=url]:focus,
+[type=week]:focus,
+textarea:focus,
+select:focus {
+  outline-width: 0;
+}
 
-html {
+html,
+body {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -109,45 +168,76 @@ h6 {
   letter-spacing: normal;
   line-height: 1em;
   text-rendering: optimizeLegibility;
-  text-transform: normal;
+  text-transform: none;
 }
 
 h1 {
-  font-size: 69px;
+  font-size: 52.9px;
 }
 
 h2 {
-  font-size: 57.5px;
+  font-size: 39.1px;
 }
 
 h3 {
-  font-size: 46px;
-}
-
-h4 {
   font-size: 32.2px;
 }
 
+h4 {
+  font-size: 28.75px;
+}
+
 h5 {
-  font-size: 27.6px;
+  font-size: 25.3px;
 }
 
 h6 {
   font-size: 23px;
 }
 
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 101.2px;
+  }
+
+  h2 {
+    font-size: 66.7px;
+  }
+
+  h3 {
+    font-size: 48.3px;
+  }
+
+  h4 {
+    font-size: 34.5px;
+  }
+
+  h5 {
+    font-size: 27.6px;
+  }
+
+  h6 {
+    font-size: 23px;
+  }
+}
 a {
-  color: #ff6363;
+  color: #ff5252;
   display: inline;
   font-size: inherit;
   font-weight: normal;
-  text-decoration: none;
-}
-a.hover, a:active, a:hover, a:focus {
-  color: #ff5252;
   text-decoration: underline;
 }
 
+@media only screen and (min-width: 1025px) {
+  a {
+    color: #ff7575;
+    text-decoration: none;
+  }
+  a.hover, a:active, a:hover, a:focus {
+    color: #ff5252;
+    text-decoration: underline;
+  }
+}
 article,
 aside,
 blockquote,
@@ -168,11 +258,11 @@ details {
 }
 
 summary {
-  color: rgba(255, 255, 255, 0.5);
+  color: #b6b5c3;
   display: list-item;
   margin: 1.5em 0 0;
 }
-summary:active, summary:hover, summary:focus {
+summary:hover {
   color: #fff;
 }
 
@@ -284,16 +374,20 @@ mark {
 }
 
 code {
-  background: rgba(255, 255, 255, 0.05);
+  background: #23214c;
 }
 
 kbd {
-  background: #ffeeee;
-  color: #230f3b;
+  background: #ffcbcb;
+  color: #541e40;
+}
+
+mark {
+  background: #ffcb19;
 }
 
 pre {
-  background: rgba(255, 255, 255, 0.05);
+  background: #23214c;
   margin: 1.5em 0;
   padding: 1em;
   display: block;
@@ -304,7 +398,7 @@ pre {
 
 hr {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid #85849c;
   box-sizing: content-box;
   height: 0;
   overflow: visible;
@@ -340,7 +434,7 @@ svg:not(:root) {
 textarea,
 select {
   background: #0a0838;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid #85849c;
   border-radius: 2px;
   color: #fff;
 }
@@ -405,11 +499,12 @@ select.hover,
 select:active,
 select:hover,
 select:focus {
-  border-color: rgba(255, 255, 255, 0.7);
+  outline-width: 0;
+  border-color: #fff;
 }
 
 output {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #85849c;
   vertical-align: bottom;
 }
 
@@ -417,18 +512,11 @@ select {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: textfield;
-  background-image: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%), linear-gradient(-45deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
+  background-image: linear-gradient(45deg, transparent 50%, #85849c 50%), linear-gradient(-45deg, transparent 50%, #85849c 50%);
   background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
   padding-right: 30px;
-}
-
-[type=file] {
-  display: inline-flex;
-  align-items: center;
-  padding-top: calc(.4em + 4px);
-  padding-bottom: 0.4em;
 }
 
 button,
@@ -437,26 +525,50 @@ input[type=reset],
 input[type=submit] {
   background: #0a0838;
   border-color: #ff5252;
-  border-radius: 2px;
   color: #ff5252;
+  border-radius: 2px;
 }
-button.hover, button:active, button:hover, button:focus,
-input[type=button].hover,
+button.active, button:active,
+input[type=button].active,
 input[type=button]:active,
-input[type=button]:hover,
-input[type=button]:focus,
-input[type=reset].hover,
+input[type=reset].active,
 input[type=reset]:active,
-input[type=reset]:hover,
-input[type=reset]:focus,
-input[type=submit].hover,
-input[type=submit]:active,
-input[type=submit]:hover,
-input[type=submit]:focus {
+input[type=submit].active,
+input[type=submit]:active {
   background: #ff5252;
   color: #0a0838;
 }
 
+@media only screen and (min-width: 1025px) {
+  button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+    background: #0a0838;
+    border-color: #ff5252;
+    color: #ff5252;
+    border-radius: 2px;
+  }
+  button.active, button.hover, button:active, button:hover, button:focus,
+input[type=button].active,
+input[type=button].hover,
+input[type=button]:active,
+input[type=button]:hover,
+input[type=button]:focus,
+input[type=reset].active,
+input[type=reset].hover,
+input[type=reset]:active,
+input[type=reset]:hover,
+input[type=reset]:focus,
+input[type=submit].active,
+input[type=submit].hover,
+input[type=submit]:active,
+input[type=submit]:hover,
+input[type=submit]:focus {
+    background: #ff5252;
+    color: #0a0838;
+  }
+}
 button::-moz-focus-inner,
 input::-moz-focus-inner,
 textarea::-moz-focus-inner,
@@ -466,7 +578,7 @@ select::-moz-focus-inner {
 }
 
 fieldset {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #85849c;
   margin: 1.5em 0;
   padding: 0.35em 0.7em 0.7em;
   max-width: calc(100% - 1.4em);
@@ -504,16 +616,11 @@ table {
 
 tbody tr,
 tfoot tr {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid #85849c;
 }
 
 th, td {
   padding: 0.4em 0.8em;
-}
-
-.bussy,
-[aria-busy=true] {
-  cursor: progress !important;
 }
 
 .controls,
@@ -526,22 +633,15 @@ th, td {
 [disabled],
 [disabled]:active,
 [disabled]:focus,
-[disabled]:hover {
-  cursor: default !important;
-  opacity: 0.3 !important;
+[disabled]:hover,
+.readonly,
+[readonly] {
   pointer-events: none !important;
 }
 
 .hidden,
 [hidden] {
   display: none !important;
-  pointer-events: none !important;
-}
-
-.readonly,
-[readonly] {
-  border-color: rgba(255, 255, 255, 0.15);
-  cursor: default !important;
   pointer-events: none !important;
 }
 

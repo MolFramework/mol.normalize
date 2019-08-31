@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|PT+Serif');
 
-$m-background:  			#0a0838;
-$m-color:       			#fff;
-$m-primary:						#ff5252;
-
 $m-font-family: 			'Open Sans', sans-serif;
 $m-font-size:       	16px;
 $m-font-weight:     	400;
@@ -20,4 +16,41 @@ $m-h-height: 					1em;
 $m-h-spacing:					normal;
 $m-h-weight: 					600;
 $m-h-style:  					normal;
-$m-h-transform:  			normal;
+$m-h-transform:  			none;
+
+$m-colors: (
+  "background": #0a0838,
+  "font": #fff,
+  "primary": #ff5252
+);
+
+$m-queries: (
+  "phone": (
+    "since": 320px,
+    "until": 767px,
+    "width": 100%,
+    "minwidth": inherit,
+    "maxwidth": inherit
+  ),
+  "tablet": (
+    "since": 768px,
+    "until": 1024px,
+    "width": 100%,
+    "minwidth": inherit,
+    "maxwidth": inherit
+  ),
+  "laptop": (
+    "since": 1025px,
+    "until": 1599.99px,
+    "width": 100%,
+    "minwidth": inherit,
+    "maxwidth": inherit
+  ),
+  "desktops": (
+    "since": 1600px,
+    "until": 99999px,
+    "width": 100%,
+    "minwidth": inherit,
+    "maxwidth": inherit
+  )
+);

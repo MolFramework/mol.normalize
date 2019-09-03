@@ -1,7 +1,7 @@
 # Mol Normalize
 Para normalizar los estilos que vienen definidos por defecto en cada navegador web y darle un poco de estilo.
 
-v2.0.1
+v3.0.0
 
 
 ## Uso e instalación
@@ -50,30 +50,64 @@ mol.normalize/
     └── normalize.scss
 ```
 
-#### Variables específicas del normalize
+#### Variables
 ```text
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|PT+Serif');
 
-$m-background:      #fff;
-$m-color:           #222029;
-$m-primary:         #32bdc6;
+$m-font-family: 			'Open Sans', sans-serif;
+$m-font-size:       	16px;
+$m-font-weight:     	400;
+$m-letter-spacing:  	normal;
+$m-line-height:     	1.5em;
 
-$m-font-serif:      'PT Serif', serif;
-$m-font-family:     'Open Sans', sans-serif;
-$m-font-size:       16px;
-$m-font-weight:     400;
-$m-letter-spacing:  normal;
-$m-line-height:     1.5em;
+$m-code-family: 			monospace;
 
-$m-code-family:     monospace;
+$m-em-family: 				'PT Serif', serif;
 
-$m-h-family:        'Josefin Sans', sans-serif;
-$m-h-size:          23px;
-$m-h-height:        1em;
-$m-h-spacing:       normal;
-$m-h-weight:        600;
-$m-h-style:         normal;
-$m-h-transform:     normal;
+$m-h-family: 					'Josefin Sans', sans-serif;
+$m-h-size:   					23px;
+$m-h-height: 					1em;
+$m-h-spacing:					normal;
+$m-h-weight: 					600;
+$m-h-style:  					normal;
+$m-h-transform:  			none;
+
+$m-colors: (
+  "background": #0a0838,
+  "font": #fff,
+  "primary": #ff5252
+);
+
+$m-queries: (
+  "phone": (
+    "since": 320px,
+    "until": 767px,
+    "width": 100%,
+    "minwidth": inherit,
+    "maxwidth": inherit
+  ),
+  "tablet": (
+    "since": 768px,
+    "until": 1024px,
+    "width": 100%,
+    "minwidth": inherit,
+    "maxwidth": inherit
+  ),
+  "laptop": (
+    "since": 1025px,
+    "until": 1599.99px,
+    "width": 100%,
+    "minwidth": inherit,
+    "maxwidth": inherit
+  ),
+  "desktops": (
+    "since": 1600px,
+    "until": 99999px,
+    "width": 100%,
+    "minwidth": inherit,
+    "maxwidth": inherit
+  )
+);
 ```
 
 ## Problemas conocidos

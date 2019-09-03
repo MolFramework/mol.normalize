@@ -27,6 +27,6 @@
     "url": "https://github.com/mol-project/mol.normalize/issues"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3"
+    "browser-sync": "^2.26.7"
   }
 }

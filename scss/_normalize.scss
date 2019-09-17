@@ -5,6 +5,20 @@
   @return $map;
 }
 
+@function color-contrast($color, $bg) {
+  @if lightness($color) > 50 {
+    @if lightness($bg) > 50 {
+      @return false;
+    }
+  }
+  @else {
+    @if lightness($bg) < 50 {
+      @return false;
+    }
+  }
+  @return true;
+}
+
 %m-font-base {
   color: map-get($m-colors, "font");
   font-family: $m-font-family;
@@ -120,13 +134,19 @@ a {
 }
 @media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
   a {
-    color: mix(map-get($m-colors, "primary"), map-get($m-colors, "font"), 80%);
-    text-decoration: none;
-    &.hover,
+    $link-color: map-get($m-colors, "primary");
+    $link-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 27%);
+    @if color-contrast(black, map-get($m-colors, "background")) {
+      $link-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: -27%);
+    }
+    color: $link-color;
+    text-decoration: underline;
+    &.active,
     &:active,
-    &:hover,
-    &:focus {
-      color: map-get($m-colors, "primary");
+    &:focus,
+    &.hover,
+    &:hover {
+      color: $link-color-hover;
       text-decoration: underline;
     }
   }
@@ -165,7 +185,8 @@ blockquote {
   margin: $m-line-height * 2;
   font-family: $m-em-family;
   font-style: italic;
-  font-size: 1.1em;
+  font-size: $m-font-size * 1.23;
+  line-height: $m-line-height;
 }
 
 form,
@@ -183,6 +204,7 @@ progress,
 video {
   display: inline-block;
 }
+
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -260,7 +282,6 @@ sup {
 
 code,
 kbd,
-pre,
 samp,
 var,
 mark {
@@ -272,21 +293,43 @@ mark {
   margin: .2em 0;
 }
 
-code {
+code,
+kbd,
+pre,
+samp {
   background: mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 90%);
 }
 
 kbd {
-  background: mix(map-get($m-colors, "font"), map-get($m-colors, "primary"), 70%);
-  color: mix(map-get($m-colors, "background"), map-get($m-colors, "primary"), 70%);
+  color: mix(map-get($m-colors, "font"), map-get($m-colors, "primary"), 50%);
+  background: map-get($m-colors, "font");
+  color: map-get($m-colors, "background");
+  &::before {
+    content: ">_ ";
+    color: map-get($m-colors, "primary");
+  }
+}
+
+samp {
+  color: mix(map-get($m-colors, "font"), map-get($m-colors, "primary"), 50%);
+  &::before {
+    content: ">> ";
+    color: map-get($m-colors, "primary");
+  }
+}
+
+var {
+  color: mix(map-get($m-colors, "font"), map-get($m-colors, "primary"), 50%);
 }
 
 mark {
-  background: mix(yellow, map-get($m-colors, "primary"), 70%);
+  background: mix(yellow, map-get($m-colors, "primary"), 90%);
 }
 
 pre {
-  background: mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 90%);
+  font-family: $m-code-family;
+  font-size: .9em;
+  font-weight: normal;
   margin: $m-line-height 0;
   padding: 1em;
   display: block;
@@ -333,7 +376,7 @@ svg:not(:root) {
 textarea,
 select {
   @extend %m-input-base;
-  background: map-get($m-colors, "background");
+  background: transparent;
   border: 1px solid mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 50%);
   border-radius: 2px;
   color: map-get($m-colors, "font");
@@ -371,35 +414,39 @@ input[type="reset"],
 input[type="submit"] {
   @extend %m-input-base;
   @extend %m-interact-base;
-  background: map-get($m-colors, "background");
-  border-color: map-get($m-colors, "primary");
-  color: map-get($m-colors, "primary");
   border-radius: 2px;
-  &.active,
-  &:active {
-    background: map-get($m-colors, "primary");
-    color: map-get($m-colors, "background");
-  }
-}
-@media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
-  button,
-  input[type="button"],
-  input[type="reset"],
-  input[type="submit"] {
-    @extend %m-input-base;
-    @extend %m-interact-base;
-    background: map-get($m-colors, "background");
-    border-color: map-get($m-colors, "primary");
-    color: map-get($m-colors, "primary");
-    border-radius: 2px;
-    &.active,
-    &.hover,
-    &:active,
-    &:hover,
-    &:focus {
-      background: map-get($m-colors, "primary");
-      color: map-get($m-colors, "background");
+  $btn-background: map-get($m-colors, "background");
+  $btn-border: map-get($m-colors, "primary");
+  $btn-color: map-get($m-colors, "primary");
+  $btn-background-hover: map-get($m-colors, "primary");
+  $btn-border-hover: map-get($m-colors, "primary");
+  $btn-color-hover: map-get($m-colors, "background");
+  @if color-contrast(map-get($m-colors, "primary"), map-get($m-colors, "background")) == false {
+    $btn-background: map-get($m-colors, "primary");
+    $btn-border: map-get($m-colors, "primary");
+    $btn-color: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 36%);
+    $btn-background-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 20%);
+    $btn-border-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 20%);
+    $btn-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: -50%);
+    @if color-contrast(black, map-get($m-colors, "primary")) {
+      $btn-color: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: -36%);
+      $btn-background-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: -20%);
+      $btn-border-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: -20%);
+      $btn-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 50%);
     }
+  }
+
+  background: $btn-background;
+  border-color: $btn-border;
+  color: $btn-color;
+  &.active,
+  &:active,
+  &.hover,
+  &:hover,
+  &:focus {
+    background: $btn-background-hover;
+    border-color: $btn-border-hover;
+    color: $btn-color-hover;
   }
 }
 
@@ -475,6 +522,31 @@ th, td {
 [hidden] {
   display: none !important;
   pointer-events: none !important;
+}
+
+::-webkit-input-placeholder {
+  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.5);
+  @if color-contrast(black, map-get($m-colors, "background")) {
+    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.5);
+  }
+}
+::-moz-placeholder {
+  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.5);
+  @if color-contrast(black, map-get($m-colors, "background")) {
+    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.5);
+  }
+}
+:-ms-input-placeholder {
+  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.5);
+  @if color-contrast(black, map-get($m-colors, "background")) {
+    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.5);
+  }
+}
+:-moz-placeholder {
+  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.5);
+  @if color-contrast(black, map-get($m-colors, "background")) {
+    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.5);
+  }
 }
 
 ::-webkit-selection {

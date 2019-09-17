@@ -1,5 +1,7 @@
 # Mol Normalize #
-Para normalizar los estilos que vienen definidos por defecto en cada navegador web y darle un poco de estilo. *This project if for normalize styles given by default for each web browser and it is for add a few custom style too.*
+Para normalizar los estilos que vienen definidos por defecto en cada navegador web y darle un poco de estilo. 
+
+*This project if for normalize styles given by default for each web browser and it is for add a few custom style too.*
 
 ## Para usar la librería *How to use* ##
 Instala la librería *Install the library*
@@ -8,8 +10,8 @@ Instala la librería *Install the library*
 npm install --save-dev https://github.com/mol-project/mol.normalize.git
 ```
 
-Crea un archivo con las variables que las que se encuentran en el archivo de `~mol.normalize/scss/_vars.scss`[^1] para editar la tipografía, colores y media queries
-*Create a var file that must have same vars like they are in the `~mol.normalize/scss/_vars.scss`[^1] file where you can edit general style aspects*
+Crea o copia el archivo de [variables](https://github.com/mol-project/mol.normalize/blob/master/scss/_vars.scss) para editar la tipografía, colores y media queries
+*Create a var file like [this file](https://github.com/mol-project/mol.normalize/blob/master/scss/_vars.scss) where you can edit general style aspects*
 
 En el archivo general de SCSS de tu proyecto, importa el archivo de variables y el archivo principal de la librería *Import the vars and main files in to your project scss file*
 ```sh
@@ -23,7 +25,7 @@ Y compilalo con el resto de tu código, para evitar cargar tantos archivos. *Com
 [mol.normalize](https://raw.githubusercontent.com/mol-project/mol.normalize/master/dist/normalize.min.css)
 
 
-### [^1]: Variables ###
+### Variables ###
 ```text
 $m-font-family: sans-serif;
 $m-font-size: 16px;
@@ -53,30 +55,18 @@ $m-queries: (
   "phone": (
     "since": 320px,
     "until": 767px,
-    "width": 100%,
-    "minwidth": inherit,
-    "maxwidth": inherit
   ),
   "tablet": (
     "since": 768px,
     "until": 1024px,
-    "width": 100%,
-    "minwidth": inherit,
-    "maxwidth": inherit
   ),
   "laptop": (
     "since": 1025px,
     "until": 1599.99px,
-    "width": 100%,
-    "minwidth": inherit,
-    "maxwidth": inherit
   ),
   "desktops": (
     "since": 1600px,
     "until": 99999px,
-    "width": 100%,
-    "minwidth": inherit,
-    "maxwidth": inherit
   )
 );
 ```

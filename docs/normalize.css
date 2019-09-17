@@ -1,10 +1,9 @@
 /*
- * mol.normalize v2.0.1
+ * mol.normalize v3.0.1
  * editable normalize file. used in modules in mol-project
  * MIT License
  * https://github.com/mol-project
  */
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|PT+Serif");
 body, button,
 input[type=button],
 input[type=reset],
@@ -24,8 +23,8 @@ input[type=submit], output, [type=date],
 [type=week],
 textarea,
 select {
-  color: #fff;
-  font-family: "Open Sans", sans-serif;
+  color: #222;
+  font-family: sans-serif;
   font-size: 16px;
   line-height: 1.5em;
   font-weight: 400;
@@ -151,7 +150,7 @@ body {
 }
 
 body {
-  background: #0a0838;
+  background: #fff;
   margin: 0;
   padding: 0;
 }
@@ -162,7 +161,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: sans-serif;
   font-style: normal;
   font-weight: 600;
   letter-spacing: normal;
@@ -221,7 +220,7 @@ h6 {
   }
 }
 a {
-  color: #ff5252;
+  color: #38E9B5;
   display: inline;
   font-size: inherit;
   font-weight: normal;
@@ -230,11 +229,11 @@ a {
 
 @media only screen and (min-width: 1025px) {
   a {
-    color: #ff7575;
-    text-decoration: none;
+    color: #38E9B5;
+    text-decoration: underline;
   }
-  a.hover, a:active, a:hover, a:focus {
-    color: #ff5252;
+  a.active, a:active, a:focus, a.hover, a:hover {
+    color: #00976b;
     text-decoration: underline;
   }
 }
@@ -258,19 +257,20 @@ details {
 }
 
 summary {
-  color: #b6b5c3;
+  color: #646464;
   display: list-item;
   margin: 1.5em 0 0;
 }
 summary:hover {
-  color: #fff;
+  color: #222;
 }
 
 blockquote {
   margin: 3em;
-  font-family: "PT Serif", serif;
+  font-family: serif;
   font-style: italic;
-  font-size: 1.1em;
+  font-size: 19.68px;
+  line-height: 1.5em;
 }
 
 form,
@@ -317,12 +317,12 @@ ins {
 }
 
 abbr {
-  border-bottom: 1px dotted #fff;
+  border-bottom: 1px dotted #222;
   cursor: help;
 }
 
 ins {
-  border-bottom: 1px dashed #fff;
+  border-bottom: 1px dashed #222;
 }
 
 b,
@@ -335,7 +335,7 @@ i,
 em,
 cite,
 q {
-  font-family: "PT Serif", serif;
+  font-family: serif;
   font-style: italic;
 }
 
@@ -361,7 +361,6 @@ sup {
 
 code,
 kbd,
-pre,
 samp,
 var,
 mark {
@@ -373,21 +372,43 @@ mark {
   margin: 0.2em 0;
 }
 
-code {
-  background: #23214c;
+code,
+kbd,
+pre,
+samp {
+  background: #e9e9e9;
 }
 
 kbd {
-  background: #ffcbcb;
-  color: #541e40;
+  color: #2d866c;
+  background: #222;
+  color: #fff;
+}
+kbd::before {
+  content: ">_ ";
+  color: #38E9B5;
+}
+
+samp {
+  color: #2d866c;
+}
+samp::before {
+  content: ">> ";
+  color: #38E9B5;
+}
+
+var {
+  color: #2d866c;
 }
 
 mark {
-  background: #ffcb19;
+  background: #ebfd12;
 }
 
 pre {
-  background: #23214c;
+  font-family: monospace;
+  font-size: 0.9em;
+  font-weight: normal;
   margin: 1.5em 0;
   padding: 1em;
   display: block;
@@ -398,7 +419,7 @@ pre {
 
 hr {
   border: none;
-  border-top: 1px solid #85849c;
+  border-top: 1px solid #919191;
   box-sizing: content-box;
   height: 0;
   overflow: visible;
@@ -433,10 +454,10 @@ svg:not(:root) {
 [type=week],
 textarea,
 select {
-  background: #0a0838;
-  border: 1px solid #85849c;
+  background: transparent;
+  border: 1px solid #919191;
   border-radius: 2px;
-  color: #fff;
+  color: #222;
 }
 [type=date].hover, [type=date]:active, [type=date]:hover, [type=date]:focus,
 [type=datetime].hover,
@@ -500,11 +521,11 @@ select:active,
 select:hover,
 select:focus {
   outline-width: 0;
-  border-color: #fff;
+  border-color: #222;
 }
 
 output {
-  border-bottom: 1px solid #85849c;
+  border-bottom: 1px solid #919191;
   vertical-align: bottom;
 }
 
@@ -512,7 +533,7 @@ select {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: textfield;
-  background-image: linear-gradient(45deg, transparent 50%, #85849c 50%), linear-gradient(-45deg, transparent 50%, #85849c 50%);
+  background-image: linear-gradient(45deg, transparent 50%, #919191 50%), linear-gradient(-45deg, transparent 50%, #919191 50%);
   background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
@@ -523,52 +544,32 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  background: #0a0838;
-  border-color: #ff5252;
-  color: #ff5252;
   border-radius: 2px;
+  background: #38E9B5;
+  border-color: #38E9B5;
+  color: #00694a;
 }
-button.active, button:active,
+button.active, button:active, button.hover, button:hover, button:focus,
 input[type=button].active,
 input[type=button]:active,
-input[type=reset].active,
-input[type=reset]:active,
-input[type=submit].active,
-input[type=submit]:active {
-  background: #ff5252;
-  color: #0a0838;
-}
-
-@media only screen and (min-width: 1025px) {
-  button,
-input[type=button],
-input[type=reset],
-input[type=submit] {
-    background: #0a0838;
-    border-color: #ff5252;
-    color: #ff5252;
-    border-radius: 2px;
-  }
-  button.active, button.hover, button:active, button:hover, button:focus,
-input[type=button].active,
 input[type=button].hover,
-input[type=button]:active,
 input[type=button]:hover,
 input[type=button]:focus,
 input[type=reset].active,
-input[type=reset].hover,
 input[type=reset]:active,
+input[type=reset].hover,
 input[type=reset]:hover,
 input[type=reset]:focus,
 input[type=submit].active,
-input[type=submit].hover,
 input[type=submit]:active,
+input[type=submit].hover,
 input[type=submit]:hover,
 input[type=submit]:focus {
-    background: #ff5252;
-    color: #0a0838;
-  }
+  background: #00bb84;
+  border-color: #00bb84;
+  color: white;
 }
+
 button::-moz-focus-inner,
 input::-moz-focus-inner,
 textarea::-moz-focus-inner,
@@ -578,7 +579,7 @@ select::-moz-focus-inner {
 }
 
 fieldset {
-  border: 1px solid #85849c;
+  border: 1px solid #919191;
   margin: 1.5em 0;
   padding: 0.35em 0.7em 0.7em;
   max-width: calc(100% - 1.4em);
@@ -616,7 +617,7 @@ table {
 
 tbody tr,
 tfoot tr {
-  border-top: 1px solid #85849c;
+  border-top: 1px solid #919191;
 }
 
 th, td {
@@ -645,21 +646,41 @@ th, td {
   pointer-events: none !important;
 }
 
+::-webkit-input-placeholder {
+  color: rgba(103, 103, 103, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+::-moz-placeholder {
+  color: rgba(103, 103, 103, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+:-ms-input-placeholder {
+  color: rgba(103, 103, 103, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+:-moz-placeholder {
+  color: rgba(103, 103, 103, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+}
+
 ::-webkit-selection {
-  background-color: #fff;
-  color: #0a0838;
+  background-color: #222;
+  color: #fff;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background-color: #fff;
-  color: #0a0838;
+  background-color: #222;
+  color: #fff;
   text-shadow: none;
 }
 
 ::selection {
-  background-color: #fff;
-  color: #0a0838;
+  background-color: #222;
+  color: #fff;
   text-shadow: none;
 }
 

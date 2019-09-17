@@ -22,8 +22,11 @@ En el archivo general de SCSS de tu proyecto, importa el archivo de variables y 
 Y compilalo con el resto de tu código, para evitar cargar tantos archivos. *Compile this with your code and avoid to load a lot of files*
 
 ## Archivo de distribución *Distribution File* ##
+Descarga el archivo de distrubución y usalo en el head de tu proyecto. *Download the distribution file and added into your head project*
 [mol.normalize](https://raw.githubusercontent.com/mol-project/mol.normalize/master/dist/normalize.min.css)
-
+```sh
+<link rel="stylesheet" href="mol.normalize.css">
+```
 
 ### Variables ###
 ```text

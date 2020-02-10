@@ -44,7 +44,7 @@
 %m-input-base {
   @extend %m-font-base;
   display: inline-block;
-  margin: .2em 0;
+  margin: 2px 0;
   padding: .4em .8em;
   max-width: calc(100% - 1.6em);
   transition: all .27s ease-in-out;
@@ -414,7 +414,8 @@ input[type="reset"],
 input[type="submit"] {
   @extend %m-input-base;
   @extend %m-interact-base;
-  border-radius: 2px;
+  border-radius: 1px;
+  border-style: solid;
   $btn-background: map-get($m-colors, "background");
   $btn-border: map-get($m-colors, "primary");
   $btn-color: map-get($m-colors, "primary");

@@ -78,7 +78,7 @@ input[type=submit], output, [type=date],
 textarea,
 select {
   display: inline-block;
-  margin: 0.2em 0;
+  margin: 2px 0;
   padding: 0.4em 0.8em;
   max-width: calc(100% - 1.6em);
   transition: all 0.27s ease-in-out;
@@ -544,7 +544,8 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  border-radius: 2px;
+  border-radius: 1px;
+  border-style: solid;
   background: #38E9B5;
   border-color: #38E9B5;
   color: #00694a;

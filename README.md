@@ -1,10 +1,15 @@
-# Mol Normalize #
-Para normalizar los estilos que vienen definidos por defecto en cada navegador web y darle un poco de estilo. 
+## Mol Normalize ##
+Nueva versión en [mol-normalize](https://github.com/flkt-crnpio/mol-normalize)
 
-*This project if for normalize styles given by default for each web browser and it is for add a few custom style too.*
+.
 
-## Para usar la librería *How to use* ##
-Instala la librería *Install the library*
+.
+
+.
+
+___
+
+### Para usar esta librería ###
 
 ```sh
 npm install --save-dev https://github.com/mol-project/mol.normalize.git
@@ -19,12 +24,14 @@ En el archivo general de SCSS de tu proyecto, importa el archivo de variables y 
 @import '~mol.normalize/scss/_normalize.scss';
 ```
 
-Y compilalo con el resto de tu código, para evitar cargar tantos archivos. *Compile this with your code and avoid to load a lot of files*
+Y compilalo con el resto de tu código, para evitar cargar tantos archivos. 
+*Compile this with your code and avoid to load a lot of files*
 
-## Archivo de distribución *Distribution File* ##
-Descarga el archivo de distrubución y usalo en el head de tu proyecto. *Download the distribution file and added into your head project*
+### Archivo de distribución ###
+Descarga el archivo de distrubución y usalo en el head de tu proyecto. 
+*Download the distribution file and added into your head project*
 [mol.normalize](https://raw.githubusercontent.com/mol-project/mol.normalize/master/dist/normalize.min.css)
-```sh
+```text
 <link rel="stylesheet" href="mol.normalize.css">
 ```
 

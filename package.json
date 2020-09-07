@@ -1,6 +1,6 @@
 {
   "name": "mol.normalize",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "editable normalize file. for modules in mol-project",
   "scripts": {
     "dist": "sass scss/normalize.scss:dist/normalize.min.css --style compressed",
@@ -27,6 +27,6 @@
     "url": "https://github.com/mol-project/mol.normalize/issues"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7"
+    "browser-sync": "^2.26.12"
   }
 }

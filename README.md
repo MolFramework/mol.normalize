@@ -1,13 +1,5 @@
-## Mol Normalize ##
-Nueva versión en [mol-normalize](https://github.com/flkt-crnpio/mol-normalize)
+## mol.normalize
 
-.
-
-.
-
-.
-
-___
 
 ### Para usar esta librería ###
 

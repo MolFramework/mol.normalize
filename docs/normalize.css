@@ -171,27 +171,27 @@ h6 {
 }
 
 h1 {
-  font-size: 52.9px;
+  font-size: 61.6px;
 }
 
 h2 {
-  font-size: 39.1px;
+  font-size: 40.6px;
 }
 
 h3 {
-  font-size: 32.2px;
+  font-size: 29.4px;
 }
 
 h4 {
-  font-size: 28.75px;
+  font-size: 21px;
 }
 
 h5 {
-  font-size: 25.3px;
+  font-size: 16.8px;
 }
 
 h6 {
-  font-size: 23px;
+  font-size: 14px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -227,7 +227,7 @@ a {
   text-decoration: underline;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 768px) {
   a {
     color: #38E9B5;
     text-decoration: underline;

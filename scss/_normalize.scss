@@ -1,10 +1,3 @@
-@function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
-  @return $map;
-}
-
 @function color-contrast($color, $bg) {
   @if lightness($color) > 50 {
     @if lightness($bg) > 50 {
@@ -86,24 +79,24 @@ h6 {
 }
 
 h1 {
-  font-size: $m-h-size * 2.3;
+  font-size: $m-h-mobile-size * 4.4;
 }
 h2 {
-  font-size: $m-h-size * 1.7;
+  font-size: $m-h-mobile-size * 2.9;
 }
 h3 {
-  font-size: $m-h-size * 1.4;
+  font-size: $m-h-mobile-size * 2.1;
 }
 h4 {
-  font-size: $m-h-size * 1.25;
+  font-size: $m-h-mobile-size * 1.5;
 }
 h5 {
-  font-size: $m-h-size * 1.1;
+  font-size: $m-h-mobile-size * 1.2;
 }
 h6 {
-  font-size: $m-h-size;
+  font-size: $m-h-mobile-size;
 }
-@media only screen and (min-width: map-deep-get($m-queries, "tablet", "since")) {
+@media only screen and (min-width: map-get($m-queries-limit, "mobile")) {
   h1 {
     font-size: $m-h-size * 4.4;
   }
@@ -132,7 +125,7 @@ a {
   font-weight: normal;
   text-decoration: underline;
 }
-@media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
+@media only screen and (min-width: map-get($m-queries-limit, "mobile")) {
   a {
     $link-color: map-get($m-colors, "primary");
     $link-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 27%);

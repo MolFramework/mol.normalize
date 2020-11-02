@@ -4,8 +4,8 @@
   "description": "editable normalize file. for modules in mol-project",
   "scripts": {
     "dist": "sass scss/normalize.scss:dist/normalize.min.css --style compressed",
-    "docs": "npm run scss | npm run start",
-    "start": "browser-sync start --server 'docs' --files 'docs'",
+    "start": "npm run scss | npm run browsersync",
+    "browsersync": "browser-sync start --server 'docs' --files 'docs'",
     "scss": "sass --watch scss/normalize.scss:docs/normalize.css --style expanded"
   },
   "keywords": [

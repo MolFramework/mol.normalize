@@ -27,11 +27,6 @@
   -ms-touch-action: manipulation;
   text-rendering: optimizeLegibility;
   transition: all .27s ease-in-out;
-  &:active,
-  &:hover,
-  &:focus {
-    outline-width: 0;
-  }
 }
 
 %m-input-base {
@@ -119,29 +114,26 @@ h6 {
 
 a {
   @extend %m-interact-base;
-  color: map-get($m-colors, "primary");
+  $link-color: map-get($m-colors, "primary");
+  $link-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 27%);
+  @if color-contrast(black, map-get($m-colors, "background")) {
+    $link-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: -27%);
+  }
+  color: $link-color;
   display: inline;
   font-size: inherit;
   font-weight: normal;
   text-decoration: underline;
-}
-@media only screen and (min-width: map-get($m-queries-limit, "mobile")) {
-  a {
-    $link-color: map-get($m-colors, "primary");
-    $link-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 27%);
-    @if color-contrast(black, map-get($m-colors, "background")) {
-      $link-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: -27%);
-    }
-    color: $link-color;
+  &:focus,
+  &.focus {
+    box-shadow: inset 0 0 0 1em rgba($link-color-hover,.2), 0 0 0 .5em rgba($link-color-hover,.2);
+    color: $link-color-hover;
+    outline: none;
+  }
+  &.hover,
+  &:hover {
+    color: $link-color-hover;
     text-decoration: underline;
-    &.active,
-    &:active,
-    &:focus,
-    &.hover,
-    &:hover {
-      color: $link-color-hover;
-      text-decoration: underline;
-    }
   }
 }
 

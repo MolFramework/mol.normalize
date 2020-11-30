@@ -42,21 +42,6 @@ video, summary, a {
   text-rendering: optimizeLegibility;
   transition: all 0.27s ease-in-out;
 }
-button:active,
-input[type=button]:active,
-input[type=reset]:active,
-input[type=submit]:active, audio:active,
-video:active, summary:active, a:active, button:hover,
-input[type=button]:hover,
-input[type=reset]:hover,
-input[type=submit]:hover, audio:hover,
-video:hover, summary:hover, a:hover, button:focus,
-input[type=button]:focus,
-input[type=reset]:focus,
-input[type=submit]:focus, audio:focus,
-video:focus, summary:focus, a:focus {
-  outline-width: 0;
-}
 
 button,
 input[type=button],
@@ -226,17 +211,16 @@ a {
   font-weight: normal;
   text-decoration: underline;
 }
-
-@media only screen and (min-width: 768px) {
-  a {
-    color: #38E9B5;
-    text-decoration: underline;
-  }
-  a.active, a:active, a:focus, a.hover, a:hover {
-    color: #00976b;
-    text-decoration: underline;
-  }
+a:focus, a.focus {
+  box-shadow: inset 0 0 0 1em rgba(0, 151, 107, 0.2), 0 0 0 0.5em rgba(0, 151, 107, 0.2);
+  color: #00976b;
+  outline: none;
 }
+a.hover, a:hover {
+  color: #00976b;
+  text-decoration: underline;
+}
+
 article,
 aside,
 blockquote,

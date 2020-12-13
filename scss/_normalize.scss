@@ -27,6 +27,11 @@
   -ms-touch-action: manipulation;
   text-rendering: optimizeLegibility;
   transition: all .27s ease-in-out;
+  &:focus,
+  &.focus {
+    box-shadow: inset 0 0 0 10em rgba(map-get($m-colors, "primary"),.2), 0 0 0 .5em rgba(map-get($m-colors, "primary"),.2);
+    outline: none;
+  }
 }
 
 %m-input-base {
@@ -125,11 +130,7 @@ a {
   font-weight: normal;
   text-decoration: underline;
   &:focus,
-  &.focus {
-    box-shadow: inset 0 0 0 1em rgba($link-color-hover,.2), 0 0 0 .5em rgba($link-color-hover,.2);
-    color: $link-color-hover;
-    outline: none;
-  }
+  &.focus,
   &.hover,
   &:hover {
     color: $link-color-hover;
@@ -153,16 +154,30 @@ section {
 }
 
 details {
-  margin: $m-line-height 0 $m-line-height * 2;
+  margin: $m-line-height 0;
 }
 
 summary {
   @extend %m-interact-base;
-  color: mix(map-get($m-colors, "font"), map-get($m-colors, "background"), 70%);
-  display: list-item;
-  margin: $m-line-height 0 0;
+  list-style-type: none;
+  $summary-color: map-get($m-colors, "primary");
+  $summary-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 27%);
+  @if color-contrast(black, map-get($m-colors, "background")) {
+    $summary-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: -27%);
+  }
+  &::before {
+    content: "_ ";
+    color: $summary-color;
+  }
+  &:focus,
+  &.focus,
+  &.hover,
   &:hover {
-    color: map-get($m-colors, "font");
+    color: $summary-color-hover;
+  }
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
   }
 }
 

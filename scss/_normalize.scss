@@ -381,11 +381,15 @@ select {
   border-radius: 2px;
   color: map-get($m-colors, "font");
   &.hover,
-  &:active,
-  &:hover,
-  &:focus {
-    outline-width: 0;
-    border-color: map-get($m-colors, "font");
+  &:hover {
+    border-color: map-get($m-colors, "primary");
+  }
+  &.focus,
+  &:focus,
+  &:active {
+    border-color: map-get($m-colors, "primary");
+    box-shadow: 0 0 0 .25em rgba(map-get($m-colors, "primary"),.2);
+    outline: none;
   }
 }
 
@@ -398,12 +402,10 @@ output {
 select {
   appearance: none;
   -moz-appearance: none;
-  -webkit-appearance: textfield;
-  background-image:
-    linear-gradient(45deg, transparent 50%, mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 50%) 50%),
-    linear-gradient(-45deg, transparent 50%, mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 50%) 50%);
-  background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
-  background-size: 5px 5px, 5px 5px;
+  -webkit-appearance: none;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDU0IDU0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48ZyB0cmFuc2Zvcm09Im1hdHJpeCg2LjEyMzIzMzk5NTczNjc2NmUtMTcsLTEsMSw2LjEyMzIzMzk5NTczNjc2NmUtMTcsMCw1NCkiPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggc3R5bGU9IiIgZD0iTTI3LDFMMjcsMWMxNC4zNTksMCwyNiwxMS42NDEsMjYsMjZ2MGMwLDE0LjM1OS0xMS42NDEsMjYtMjYsMjZoMEMxMi42NDEsNTMsMSw0MS4zNTksMSwyN3YwICAgIEMxLDEyLjY0MSwxMi42NDEsMSwyNywxeiIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzRmYmE2ZiIgY2xhc3M9IiI+PC9wYXRoPgoJCTxwYXRoIHN0eWxlPSIiIGQ9Ik0yNyw1NEMxMi4xMTIsNTQsMCw0MS44ODgsMCwyN1MxMi4xMTIsMCwyNywwczI3LDEyLjExMiwyNywyN1M0MS44ODgsNTQsMjcsNTR6IE0yNywyICAgIEMxMy4yMTUsMiwyLDEzLjIxNSwyLDI3czExLjIxNSwyNSwyNSwyNXMyNS0xMS4yMTUsMjUtMjVTNDAuNzg1LDIsMjcsMnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiM0ZmJhNmYiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KCTxwYXRoIHN0eWxlPSIiIGQ9Ik0zMS43MDYsNDBjLTAuMjU2LDAtMC41MTItMC4wOTgtMC43MDctMC4yOTNMMTkuNTAxLDI4LjIwOWMtMC42NjctMC42NjctMC42NjctMS43NTEsMC0yLjQxOCAgIGwxMS40OTgtMTEuNDk4YzAuMzkxLTAuMzkxLDEuMDIzLTAuMzkxLDEuNDE0LDBzMC4zOTEsMS4wMjMsMCwxLjQxNEwyMS4xMiwyN2wxMS4yOTMsMTEuMjkzYzAuMzkxLDAuMzkxLDAuMzkxLDEuMDIzLDAsMS40MTQgICBDMzIuMjE4LDM5LjkwMiwzMS45NjIsNDAsMzEuNzA2LDQweiIgZmlsbD0iIzAwMDAwMCIgZGF0YS1vcmlnaW5hbD0iI2ZmZmZmZiIgY2xhc3M9IiI+PC9wYXRoPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4=);
+  background-position: 96%, 50%;
+  background-size: $m-font-size * 1.2;
   background-repeat: no-repeat;
   padding-right: 30px;
 }
@@ -449,14 +451,6 @@ input[type="submit"] {
     border-color: $btn-border-hover;
     color: $btn-color-hover;
   }
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner,
-textarea::-moz-focus-inner,
-select::-moz-focus-inner {
-  border: 0;
-  outline-width: 0;
 }
 
 fieldset {
@@ -526,27 +520,27 @@ th, td {
 }
 
 ::-webkit-input-placeholder {
-  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.5);
+  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.27);
   @if color-contrast(black, map-get($m-colors, "background")) {
-    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.5);
+    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.27);
   }
 }
 ::-moz-placeholder {
-  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.5);
+  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.27);
   @if color-contrast(black, map-get($m-colors, "background")) {
-    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.5);
+    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.27);
   }
 }
 :-ms-input-placeholder {
-  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.5);
+  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.27);
   @if color-contrast(black, map-get($m-colors, "background")) {
-    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.5);
+    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.27);
   }
 }
 :-moz-placeholder {
-  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.5);
+  color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: 27%, $alpha: -.27);
   @if color-contrast(black, map-get($m-colors, "background")) {
-    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.5);
+    color: adjust-color(map-get($m-colors, "font"), $saturation: -27%, $lightness: -27%, $alpha: -.27);
   }
 }
 

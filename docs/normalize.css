@@ -455,69 +455,88 @@ select {
   border-radius: 2px;
   color: #222;
 }
-[type=date].hover, [type=date]:active, [type=date]:hover, [type=date]:focus,
+[type=date].hover, [type=date]:hover,
 [type=datetime].hover,
-[type=datetime]:active,
 [type=datetime]:hover,
-[type=datetime]:focus,
 [type=datetime-local].hover,
-[type=datetime-local]:active,
 [type=datetime-local]:hover,
-[type=datetime-local]:focus,
 [type=email].hover,
-[type=email]:active,
 [type=email]:hover,
-[type=email]:focus,
 [type=file].hover,
-[type=file]:active,
 [type=file]:hover,
-[type=file]:focus,
 [type=month].hover,
-[type=month]:active,
 [type=month]:hover,
-[type=month]:focus,
 [type=number].hover,
-[type=number]:active,
 [type=number]:hover,
-[type=number]:focus,
 [type=password].hover,
-[type=password]:active,
 [type=password]:hover,
-[type=password]:focus,
 [type=search].hover,
-[type=search]:active,
 [type=search]:hover,
-[type=search]:focus,
 [type=tel].hover,
-[type=tel]:active,
 [type=tel]:hover,
-[type=tel]:focus,
 [type=text].hover,
-[type=text]:active,
 [type=text]:hover,
-[type=text]:focus,
 [type=time].hover,
-[type=time]:active,
 [type=time]:hover,
-[type=time]:focus,
 [type=url].hover,
-[type=url]:active,
 [type=url]:hover,
-[type=url]:focus,
 [type=week].hover,
-[type=week]:active,
 [type=week]:hover,
-[type=week]:focus,
 textarea.hover,
-textarea:active,
 textarea:hover,
-textarea:focus,
 select.hover,
-select:active,
-select:hover,
-select:focus {
-  outline-width: 0;
-  border-color: #222;
+select:hover {
+  border-color: #38E9B5;
+}
+[type=date].focus, [type=date]:focus, [type=date]:active,
+[type=datetime].focus,
+[type=datetime]:focus,
+[type=datetime]:active,
+[type=datetime-local].focus,
+[type=datetime-local]:focus,
+[type=datetime-local]:active,
+[type=email].focus,
+[type=email]:focus,
+[type=email]:active,
+[type=file].focus,
+[type=file]:focus,
+[type=file]:active,
+[type=month].focus,
+[type=month]:focus,
+[type=month]:active,
+[type=number].focus,
+[type=number]:focus,
+[type=number]:active,
+[type=password].focus,
+[type=password]:focus,
+[type=password]:active,
+[type=search].focus,
+[type=search]:focus,
+[type=search]:active,
+[type=tel].focus,
+[type=tel]:focus,
+[type=tel]:active,
+[type=text].focus,
+[type=text]:focus,
+[type=text]:active,
+[type=time].focus,
+[type=time]:focus,
+[type=time]:active,
+[type=url].focus,
+[type=url]:focus,
+[type=url]:active,
+[type=week].focus,
+[type=week]:focus,
+[type=week]:active,
+textarea.focus,
+textarea:focus,
+textarea:active,
+select.focus,
+select:focus,
+select:active {
+  border-color: #38E9B5;
+  box-shadow: 0 0 0 0.25em rgba(56, 233, 181, 0.2);
+  outline: none;
 }
 
 output {
@@ -528,10 +547,10 @@ output {
 select {
   appearance: none;
   -moz-appearance: none;
-  -webkit-appearance: textfield;
-  background-image: linear-gradient(45deg, transparent 50%, #919191 50%), linear-gradient(-45deg, transparent 50%, #919191 50%);
-  background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
-  background-size: 5px 5px, 5px 5px;
+  -webkit-appearance: none;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDU0IDU0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48ZyB0cmFuc2Zvcm09Im1hdHJpeCg2LjEyMzIzMzk5NTczNjc2NmUtMTcsLTEsMSw2LjEyMzIzMzk5NTczNjc2NmUtMTcsMCw1NCkiPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggc3R5bGU9IiIgZD0iTTI3LDFMMjcsMWMxNC4zNTksMCwyNiwxMS42NDEsMjYsMjZ2MGMwLDE0LjM1OS0xMS42NDEsMjYtMjYsMjZoMEMxMi42NDEsNTMsMSw0MS4zNTksMSwyN3YwICAgIEMxLDEyLjY0MSwxMi42NDEsMSwyNywxeiIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzRmYmE2ZiIgY2xhc3M9IiI+PC9wYXRoPgoJCTxwYXRoIHN0eWxlPSIiIGQ9Ik0yNyw1NEMxMi4xMTIsNTQsMCw0MS44ODgsMCwyN1MxMi4xMTIsMCwyNywwczI3LDEyLjExMiwyNywyN1M0MS44ODgsNTQsMjcsNTR6IE0yNywyICAgIEMxMy4yMTUsMiwyLDEzLjIxNSwyLDI3czExLjIxNSwyNSwyNSwyNXMyNS0xMS4yMTUsMjUtMjVTNDAuNzg1LDIsMjcsMnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiM0ZmJhNmYiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KCTxwYXRoIHN0eWxlPSIiIGQ9Ik0zMS43MDYsNDBjLTAuMjU2LDAtMC41MTItMC4wOTgtMC43MDctMC4yOTNMMTkuNTAxLDI4LjIwOWMtMC42NjctMC42NjctMC42NjctMS43NTEsMC0yLjQxOCAgIGwxMS40OTgtMTEuNDk4YzAuMzkxLTAuMzkxLDEuMDIzLTAuMzkxLDEuNDE0LDBzMC4zOTEsMS4wMjMsMCwxLjQxNEwyMS4xMiwyN2wxMS4yOTMsMTEuMjkzYzAuMzkxLDAuMzkxLDAuMzkxLDEuMDIzLDAsMS40MTQgICBDMzIuMjE4LDM5LjkwMiwzMS45NjIsNDAsMzEuNzA2LDQweiIgZmlsbD0iIzAwMDAwMCIgZGF0YS1vcmlnaW5hbD0iI2ZmZmZmZiIgY2xhc3M9IiI+PC9wYXRoPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4=);
+  background-position: 96%, 50%;
+  background-size: 19.2px;
   background-repeat: no-repeat;
   padding-right: 30px;
 }
@@ -565,14 +584,6 @@ input[type=submit]:focus {
   background: #00bb84;
   border-color: #00bb84;
   color: white;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner,
-textarea::-moz-focus-inner,
-select::-moz-focus-inner {
-  border: 0;
-  outline-width: 0;
 }
 
 fieldset {
@@ -644,23 +655,23 @@ th, td {
 }
 
 ::-webkit-input-placeholder {
-  color: rgba(103, 103, 103, 0.5);
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(103, 103, 103, 0.73);
+  color: rgba(0, 0, 0, 0.73);
 }
 
 ::-moz-placeholder {
-  color: rgba(103, 103, 103, 0.5);
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(103, 103, 103, 0.73);
+  color: rgba(0, 0, 0, 0.73);
 }
 
 :-ms-input-placeholder {
-  color: rgba(103, 103, 103, 0.5);
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(103, 103, 103, 0.73);
+  color: rgba(0, 0, 0, 0.73);
 }
 
 :-moz-placeholder {
-  color: rgba(103, 103, 103, 0.5);
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(103, 103, 103, 0.73);
+  color: rgba(0, 0, 0, 0.73);
 }
 
 ::-webkit-selection {

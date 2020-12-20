@@ -222,6 +222,7 @@ a {
   font-size: inherit;
   font-weight: normal;
   text-decoration: underline;
+  word-break: break-all;
 }
 a:focus, a.focus, a.hover, a:hover {
   color: #00976b;
@@ -358,12 +359,12 @@ kbd,
 samp,
 var,
 mark {
+  display: inline;
   font-family: monospace;
-  font-size: 0.9em;
   font-weight: normal;
-  padding: 0.4em 0.9em;
-  display: inline-block;
-  margin: 0.2em 0;
+  padding: 0.25em 0.5em;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 code,
@@ -404,11 +405,12 @@ pre {
   font-size: 0.9em;
   font-weight: normal;
   margin: 1.5em 0;
-  padding: 1em;
+  padding: 0.7em 1.4em;
   display: block;
   overflow: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 hr {
@@ -621,9 +623,15 @@ table {
   border-spacing: 0;
 }
 
-tbody tr,
-tfoot tr {
+tbody tr {
   border-top: 1px solid #919191;
+}
+
+tfoot tr {
+  border-top: 1px solid #c8c8c8;
+  border-bottom: 1px solid #c8c8c8;
+  color: #919191;
+  font-weight: lighter;
 }
 
 th, td {

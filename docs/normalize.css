@@ -238,7 +238,6 @@ figure,
 footer,
 header,
 main,
-menu,
 nav,
 section {
   display: block;
@@ -623,15 +622,9 @@ table {
   border-spacing: 0;
 }
 
-tbody tr {
-  border-top: 1px solid #919191;
-}
-
+tbody tr,
 tfoot tr {
-  border-top: 1px solid #c8c8c8;
-  border-bottom: 1px solid #c8c8c8;
-  color: #919191;
-  font-weight: lighter;
+  border-top: 1px solid #919191;
 }
 
 th, td {

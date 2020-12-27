@@ -40,6 +40,7 @@ $m-code-family: monospace;
 $m-em-family: serif;
 
 $m-h-family: sans-serif;
+$m-h-mobile-size: 14px;
 $m-h-size: 23px;
 $m-h-height: 1em;
 $m-h-spacing: normal;
@@ -48,28 +49,13 @@ $m-h-style: normal;
 $m-h-transform: none;
 
 $m-colors: (
-  "background": #0a0838,
-  "font": #fff,
-  "primary": #ff5252
+  "background": #fff,
+  "font": #222,
+  "primary": #38E9B5
 );
 
-$m-queries: (
-  "phone": (
-    "since": 320px,
-    "until": 767px,
-  ),
-  "tablet": (
-    "since": 768px,
-    "until": 1024px,
-  ),
-  "laptop": (
-    "since": 1025px,
-    "until": 1599.99px,
-  ),
-  "desktops": (
-    "since": 1600px,
-    "until": 99999px,
-  )
+$m-queries-limit: (
+  "mobile": 768px
 );
 ```
 
@@ -80,6 +66,8 @@ mol.normalize/
 │   ├── normalize.min.css
 │   └── normalize.min.css.map
 ├── docs/
+│   ├── assets
+│   │   └── esparragus-elelelelperrito-2016.jpg
 │   ├── index.html
 │   ├── normalize.css
 │   └── normalize.css.map
@@ -88,7 +76,3 @@ mol.normalize/
     ├── _vars.scss
     └── normalize.scss
 ```
-
-## Problemas conocidos ##
-
-(//▽//) El input type search por el momento funciona como un input type text, para mantener el estilo general de los inputs, espero puedan agregar la funcionalidad con js. *The input type search is working like a simple input text, in order to maintain coherence input design, sorry.*

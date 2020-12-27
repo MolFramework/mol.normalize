@@ -376,10 +376,50 @@ svg:not(:root) {
   }
 }
 
-[type="range"] {
+input[type=range] {
   @extend %m-input-base;
   vertical-align: middle;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
 }
+input[type=range]::-webkit-slider-runnable-track {
+  background: mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 75%);
+  border: 1px solid mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 75%);
+  border-radius: 1em;
+  cursor: pointer;
+  height: .2em;
+}
+input[type=range]::-webkit-slider-thumb {
+  background: map-get($m-colors, "primary");
+  border: 1px solid mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 70%);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -.5em;
+  height: 1em;
+  width: 1em;
+  -webkit-appearance: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  box-shadow: inset 0 0 0 10em rgba(map-get($m-colors, "primary"),.2), 0 0 0 .75em rgba(map-get($m-colors, "primary"),.2);
+}
+input[type=range]::-moz-range-track {
+  background: mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 75%);
+  border: 1px solid mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 75%);
+  border-radius: 1em;
+  cursor: pointer;
+  height: .2em;
+}
+input[type=range]::-moz-range-thumb {
+  background: map-get($m-colors, "primary");
+  border: 1px solid mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 70%);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -.5em;
+  height: 1em;
+  width: 1em;
+}
+
 [type="date"],
 [type="datetime"],
 [type="datetime-local"],
@@ -437,8 +477,9 @@ input[type="reset"],
 input[type="submit"] {
   @extend %m-input-base;
   @extend %m-interact-base;
-  border-radius: 1px;
+  border-radius: 5px;
   border-style: solid;
+  border-width: 1px;
   $btn-background: map-get($m-colors, "background");
   $btn-border: map-get($m-colors, "primary");
   $btn-color: map-get($m-colors, "primary");

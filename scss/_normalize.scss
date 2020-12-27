@@ -160,6 +160,7 @@ details {
 summary {
   @extend %m-interact-base;
   list-style-type: none;
+  word-break: break-all;
   $summary-color: map-get($m-colors, "primary");
   $summary-color-hover: adjust-color(map-get($m-colors, "primary"), $saturation: 100%, $lightness: 27%);
   @if color-contrast(black, map-get($m-colors, "background")) {
@@ -358,6 +359,27 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+[type="color"] {
+  @extend %m-input-base;
+  background: transparent;
+  border: 1px solid mix(map-get($m-colors, "background"), map-get($m-colors, "font"), 50%);
+  border-radius: 2px;
+  cursor: pointer;
+  vertical-align: middle;
+  height: calc(2.4em - 3px);
+  padding: 2px 4px;
+}
+@-moz-document url-prefix() {
+  [type="color"] {
+    height: calc(2.4em );
+    padding: 4px;
+  }
+}
+
+[type="range"] {
+  @extend %m-input-base;
+  vertical-align: middle;
+}
 [type="date"],
 [type="datetime"],
 [type="datetime-local"],
@@ -466,23 +488,10 @@ input[type="radio"] {
   display: inline-block;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-input[type="search"] {
-  appearance: textfield;
-  -moz-appearance: textfield;
-  -webkit-appearance: textfield;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
+// input[type="number"]::-webkit-inner-spin-button,
+// input[type="number"]::-webkit-outer-spin-button {
+//   height: auto;
+// }
 
 table {
   border-collapse: collapse;
@@ -496,23 +505,25 @@ th, td {
   padding: .4em .8em;
 }
 
-.controls,
-[aria-controls] {
-  cursor: pointer !important;
+[usemap]{
+  border-bottom: 1px solid map-get($m-colors, "primary");
 }
 
-.disabled,
-[aria-disabled],
 [disabled],
-[disabled]:active,
-[disabled]:focus,
-[disabled]:hover,
-.readonly,
 [readonly] {
   pointer-events: none !important;
+  background: adjust-color(map-get($m-colors, "background"), $saturation: -50%, $lightness: -7%, $alpha: -.27);
+  @if color-contrast(black, map-get($m-colors, "font")) {
+    background: adjust-color(map-get($m-colors, "background"), $saturation: -50%, $lightness: 17%, $alpha: -.27);
+  }
 }
 
-.hidden,
+[readonly]:focus {
+  border-color: rgba(map-get($m-colors, "font"),.2);
+  box-shadow: 0 0 0 .25em rgba(map-get($m-colors, "font"),.2);
+  outline: none;
+}
+
 [hidden] {
   display: none !important;
   pointer-events: none !important;

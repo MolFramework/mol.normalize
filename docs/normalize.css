@@ -22,7 +22,7 @@ input[type=submit], output, [type=date],
 [type=url],
 [type=week],
 textarea,
-select {
+select, [type=range], [type=color] {
   color: #222;
   font-family: sans-serif;
   font-size: 16px;
@@ -73,7 +73,7 @@ input[type=submit], output, [type=date],
 [type=url],
 [type=week],
 textarea,
-select {
+select, [type=range], [type=color] {
   display: inline-block;
   margin: 2px 0;
   padding: 0.4em 0.8em;
@@ -98,7 +98,7 @@ input[type=submit]:active, output:active, [type=date]:active,
 [type=url]:active,
 [type=week]:active,
 textarea:active,
-select:active, button:hover,
+select:active, [type=range]:active, [type=color]:active, button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover, output:hover, [type=date]:hover,
@@ -116,7 +116,7 @@ input[type=submit]:hover, output:hover, [type=date]:hover,
 [type=url]:hover,
 [type=week]:hover,
 textarea:hover,
-select:hover, button:focus,
+select:hover, [type=range]:hover, [type=color]:hover, button:focus,
 input[type=button]:focus,
 input[type=reset]:focus,
 input[type=submit]:focus, output:focus, [type=date]:focus,
@@ -134,7 +134,7 @@ input[type=submit]:focus, output:focus, [type=date]:focus,
 [type=url]:focus,
 [type=week]:focus,
 textarea:focus,
-select:focus {
+select:focus, [type=range]:focus, [type=color]:focus {
   outline-width: 0;
 }
 
@@ -249,6 +249,7 @@ details {
 
 summary {
   list-style-type: none;
+  word-break: break-all;
 }
 summary::before {
   content: "_ ";
@@ -433,6 +434,26 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+[type=color] {
+  background: transparent;
+  border: 1px solid #919191;
+  border-radius: 2px;
+  cursor: pointer;
+  vertical-align: middle;
+  height: calc(2.4em - 3px);
+  padding: 2px 4px;
+}
+
+@-moz-document url-prefix() {
+  [type=color] {
+    height: calc(2.4em );
+    padding: 4px;
+  }
+}
+[type=range] {
+  vertical-align: middle;
+}
+
 [type=date],
 [type=datetime],
 [type=datetime-local],
@@ -599,24 +620,6 @@ input[type=radio] {
   display: inline-block;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-input[type=search] {
-  appearance: textfield;
-  -moz-appearance: textfield;
-  -webkit-appearance: textfield;
-}
-
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -631,23 +634,22 @@ th, td {
   padding: 0.4em 0.8em;
 }
 
-.controls,
-[aria-controls] {
-  cursor: pointer !important;
+[usemap] {
+  border-bottom: 1px solid #38E9B5;
 }
 
-.disabled,
-[aria-disabled],
 [disabled],
-[disabled]:active,
-[disabled]:focus,
-[disabled]:hover,
-.readonly,
 [readonly] {
   pointer-events: none !important;
+  background: rgba(237, 237, 237, 0.73);
 }
 
-.hidden,
+[readonly]:focus {
+  border-color: rgba(34, 34, 34, 0.2);
+  box-shadow: 0 0 0 0.25em rgba(34, 34, 34, 0.2);
+  outline: none;
+}
+
 [hidden] {
   display: none !important;
   pointer-events: none !important;

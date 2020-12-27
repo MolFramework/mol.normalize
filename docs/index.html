@@ -12,7 +12,7 @@
     </style>
   </head>
   <body>
-    <div class="wrap">
+    <main class="wrap">
       <h1>Mol<br>Normalize</h1>
       <hr>
       <h1>Título 1</h1>
@@ -67,6 +67,13 @@
         <var>var variable</var>
         <mark>mark texto marcado</mark>
       </p>
+
+      <map name="primary">
+        <area shape="circle" coords="75,75,75" href="#" alt="Click to go Left">
+        <area shape="circle" coords="275,75,75" href="#" alt="Click to go Right">
+      </map>
+      <img usemap="#primary" src="http://placehold.it/350x150" alt="350 x 150 pic">
+
       <p>
         <a href="#">link</a>
         <a href="#" class="hover">link:hover</a>
@@ -80,47 +87,120 @@
           <input id="input1" type="text" name="" value="" placeholder="input">
         </fieldset>
       </form>
-      <p>
-        <input type="text" placeholder="text">
-        <input type="text" class="hover" placeholder="hover">
-        <input type="text" class="focus" placeholder="focus">
-        <br>
-        <input type="text" class="disabled" placeholder="disabled">
-        <input type="text" class="readonly" placeholder="readonly" value="readonly">
-        <input type="text" class="hidden" placeholder="hidden">
-        <br>
-        <input type="search" placeholder="search">
-        <input type="number" placeholder="number">
-        <select>
-          <option disabled value="" selected>Select</option>
-          <option value="1">option 1</option>
-          <option value="2">option 2</option>
-          <optgroup label="Option Group">
-            <option value="3">group 1</option>
-            <option value="4">group 2</option>
-          </optgroup>
-        </select>
-        <input type="file" name="" value="">
-      </p>
-      <p>
-        <input type="checkbox" name="" value="">
-        <input type="radio" name="" value="">
-      </p>
-      <p>
+      <form>
+        <fieldset>
+          <legend>pseudo classes</legend>
+          <input type="text" placeholder="text">
+          <input type="text" class="hover" placeholder="hover">
+          <input type="text" class="focus" placeholder="focus">
+          <br>
+          <input type="text" placeholder="disabled" disabled>
+          <input type="text" placeholder="readonly" readonly>
+        </fieldset>
+      </form>
+      <form>
+        <fieldset>
+          <legend>input types</legend>
+          <label for="button">button</label>
+          <input id="button" type="button" value="button">
 
-      </p>
-      <p>
-        <textarea name="name" rows="3" cols="33" placeholder="textarea"></textarea>
-      </p>
-      <p>
-        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)" class="form-inline">
+          <label for="checkbox">checkbox</label>
+          <input id="checkbox" type="checkbox">
+
+          <label for="color">color</label>
+          <input id="color" type="color" value="#000000">
+
+          <label for="date">date</label>
+          <input id="date" type="date" placeholder="date">
+
+          <label for="datetime-local">datetime-local</label>
+          <input id="datetime-local" type="datetime-local" placeholder="datetime-local">
+
+          <label for="email">email</label>
+          <input id="email" type="email" placeholder="email">
+
+          <label for="file">file</label>
+          <input id="file" type="file" placeholder="file">
+
+          <!-- <label for="hidden">hidden</label>
+          <input id="hidden" type="hidden" placeholder="hidden">
+
+          <label for="image">image</label>
+          <input id="image" type="image" placeholder="image"> -->
+
+          <label for="month">month</label>
+          <input id="month" type="month" placeholder="month">
+
+          <label for="number">number</label>
+          <input id="number" type="number" placeholder="number">
+
+          <label for="password">password</label>
+          <input id="password" type="password" placeholder="password">
+
+          <label for="radio">radio</label>
+          <input id="radio" type="radio" placeholder="radio">
+
+          <label for="range">range</label>
+          <input id="range" type="range" placeholder="range">
+
+          <label for="reset">reset</label>
+          <input id="reset" type="reset" placeholder="reset">
+
+          <label for="search">search</label>
+          <input id="search" type="search" placeholder="search">
+
+          <label for="submit">submit</label>
+          <input id="submit" type="submit" placeholder="submit">
+
+          <label for="tel">tel</label>
+          <input id="tel" type="tel" placeholder="tel">
+
+          <label for="text">text</label>
+          <input id="text" type="text" placeholder="text">
+
+          <label for="time">time</label>
+          <input id="time" type="time" placeholder="time">
+
+          <label for="url">url</label>
+          <input id="url" type="url" placeholder="url">
+
+          <label for="week">week</label>
+          <input id="week" type="week" placeholder="week">
+        </fieldset>
+      </form>
+      <form>
+        <fieldset>
+          <legend>select</legend>
+          <select>
+            <option disabled value="" selected>Select</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <optgroup label="Option Group">
+              <option value="3">group 1</option>
+              <option value="4">group 2</option>
+            </optgroup>
+          </select>
+        </fieldset>
+      </form>
+      
+      <form>
+        <fieldset>
+          <legend>textarea</legend>
+          <textarea name="name" rows="3" cols="33" placeholder="textarea"></textarea>
+        </fieldset>
+      </form>
+
+      <form oninput="x.value=parseInt(a.value)+parseInt(b.value)" class="form-inline">
+        <fieldset>
+          <legend>output</legend>
           <input type="number" id="a" value="10">
           <span>+</span>
           <input type="number" id="b" value="50">
           <span>=</span>
           <output name="x" for="a b"></output>
-        </form>
-      </p>
+        </fieldset>
+      </form>
+
       <p>
         <button type="button" name="button">button</button>
         <button type="button" name="button" class="hover">button.hover</button>
@@ -184,6 +264,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </main>
   </body>
 </html>

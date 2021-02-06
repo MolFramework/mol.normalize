@@ -3,7 +3,9 @@
   "version": "4.0.0",
   "description": "editable normalize file. for modules in mol-project",
   "scripts": {
-    "dist": "sass scss/normalize.scss:dist/mol.normalize.min.css --style compressed",
+    "dist": "npm run compress; npm run zip",
+    "compress": "sass scss/normalize.scss:dist/mol.normalize.min.css --style compressed",
+    "zip": "zip docs/assets/mol.normalize.zip dist/*",
     "start": "npm run scss | npm run browsersync",
     "browsersync": "browser-sync start --server 'docs' --files 'docs'",
     "scss": "sass --watch scss/normalize.scss:docs/mol.normalize.css --style expanded"

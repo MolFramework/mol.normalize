@@ -1,6 +1,6 @@
 {
   "name": "mol.normalize",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "editable normalize file. for modules in mol-project",
   "scripts": {
     "dist": "npm run compress; npm run zip",
@@ -29,6 +29,6 @@
     "url": "https://github.com/mol-project/mol.normalize/issues"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.12"
+    "browser-sync": "^2.26.14"
   }
 }
